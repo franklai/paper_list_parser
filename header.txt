@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<style type="text/css">
+#container {
+width: 70%;
+margin: 0 auto;
+}
+
+h3 {
+margin: 0;
+padding: 0;
+}
+h3 span {
+cursor: pointer;
+}
+h3 span:hover {
+background: green;
+}
+
+dl {
+margin: 0;
+padding: 0;
+margin-bottom: 1em;
+}
+dt {
+color: blue;
+}
+dt:hover {
+color: green;
+}
+
+.click {
+margin-right: 20px;
+padding: 3px;
+cursor: pointer;
+background: #AFA;
+}
+.click:hover {
+background: green;
+}
+#act {
+margin-bottom: 1em;
+}
+</style>
+<script type="text/javascript">
+<!--
+window.onload = init;
+
+function $(obj)
+{
+	return document.getElementById(obj);
+}
+function _(obj)
+{
+	return document.getElementsByTagName(obj);
+}
+
+function init()
+{
+//	 var mainList = document.getElementById("mainList");
+//	 var lis = mainList.childNodes;
+	var h3s = _("h3");
+
+	// event listener
+	$("expand").onclick = expandAll;
+	$("collapse").onclick = collapseAll;
+
+	for (var index in h3s){
+		var obj = h3s[index];
+		
+		if (obj.nodeType == 1){
+			// event listener of mouse click
+			obj.firstChild.onclick = fold;
+
+			// default value: block
+			var target = getDl(obj);
+			target.style.display = "block";
+		}
+	}
+}
+
+function expandAll()
+{
+	actAll("block");
+}
+
+function collapseAll()
+{
+	actAll("none");
+}
+
+function actAll(value)
+{
+	var h3s = _("h3");
+
+	for (var index in h3s) {
+		var obj = h3s[index];
+
+		if (obj.nodeType == 1) {
+			var target = getDl(obj);
+			target.style.display = value;
+		}
+	}
+}
+
+function getDl(h3)
+{
+	// nextSibling: DL (maybe there is white space)
+	var obj = h3.nextSibling;
+
+	while (obj.nodeType == 3){
+		obj = obj.nextSibling;
+	}
+
+	return obj;
+}
+
+function fold()
+{
+	// this:		SPAN
+	// parentNode:  H3
+	// obj:		 DL
+	var obj = getDl(this.parentNode);
+	
+	if (obj.style.display == "block"){
+		obj.style.display = "none";
+	}
+	else {
+		obj.style.display = "block";
+	}
+}
+
+//-->
+</script>
+</head>
+<body>
+
+<div id="container">
+
+<h1>{TITLE}</h1>
+
+<div id="act">
+<span id="collapse" class="click">Collapse All</span>
+<span id="expand" class="click">Expand All</span>
+</div>
+
