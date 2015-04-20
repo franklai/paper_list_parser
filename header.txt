@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
 <title>{TITLE}</title>
 <style type="text/css">
 #container {
-width: 70%;
-margin: 0 auto;
+	width: 70%;
+	margin: 0 auto;
 }
 
 h3 {
-margin: 0;
-padding: 0;
+	margin: 0;
+	padding: 0;
 }
 h3 span {
-cursor: pointer;
+	cursor: pointer;
 }
 h3 span:hover {
-background: green;
+	background: green;
 }
 
 dl {
-margin: 0;
-padding: 0;
-margin-bottom: 1em;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1em;
 }
 dt {
-color: blue;
+	color: blue;
 }
 dt:hover {
-color: green;
+	color: green;
 }
 
 .click {
-margin-right: 20px;
-padding: 3px;
-cursor: pointer;
-background: #AFA;
+	margin-right: 20px;
+	padding: 3px;
+	cursor: pointer;
+	background: #AFA;
 }
 .click:hover {
-background: green;
+	background: green;
 }
 #act {
-margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 </style>
 <script type="text/javascript">

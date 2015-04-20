@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>INFOCOM 2014 Paper List</title>
+<style type="text/css">
+#container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}
+h3 span {
+	cursor: pointer;
+}
+h3 span:hover {
+	background: green;
+}
+
+dl {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1em;
+}
+dt {
+	color: blue;
+}
+dt:hover {
+	color: green;
+}
+
+.click {
+	margin-right: 20px;
+	padding: 3px;
+	cursor: pointer;
+	background: #AFA;
+}
+.click:hover {
+	background: green;
+}
+#act {
+	margin-bottom: 1em;
+}
+</style>
+<script type="text/javascript">
+<!--
+window.onload = init;
+
+function $(obj)
+{
+	return document.getElementById(obj);
+}
+function _(obj)
+{
+	return document.getElementsByTagName(obj);
+}
+
+function init()
+{
+//	 var mainList = document.getElementById("mainList");
+//	 var lis = mainList.childNodes;
+	var h3s = _("h3");
+
+	// event listener
+	$("expand").onclick = expandAll;
+	$("collapse").onclick = collapseAll;
+
+	for (var index in h3s){
+		var obj = h3s[index];
+		
+		if (obj.nodeType == 1){
+			// event listener of mouse click
+			obj.firstChild.onclick = fold;
+
+			// default value: block
+			var target = getDl(obj);
+			target.style.display = "block";
+		}
+	}
+}
+
+function expandAll()
+{
+	actAll("block");
+}
+
+function collapseAll()
+{
+	actAll("none");
+}
+
+function actAll(value)
+{
+	var h3s = _("h3");
+
+	for (var index in h3s) {
+		var obj = h3s[index];
+
+		if (obj.nodeType == 1) {
+			var target = getDl(obj);
+			target.style.display = value;
+		}
+	}
+}
+
+function getDl(h3)
+{
+	// nextSibling: DL (maybe there is white space)
+	var obj = h3.nextSibling;
+
+	while (obj.nodeType == 3){
+		obj = obj.nextSibling;
+	}
+
+	return obj;
+}
+
+function fold()
+{
+	// this:		SPAN
+	// parentNode:  H3
+	// obj:		 DL
+	var obj = getDl(this.parentNode);
+	
+	if (obj.style.display == "block"){
+		obj.style.display = "none";
+	}
+	else {
+		obj.style.display = "block";
+	}
+}
+
+//-->
+</script>
+</head>
+<body>
+
+<div id="container">
+
+<h1>INFOCOM 2014 Paper List</h1>
+
+<div id="act">
+<span id="collapse" class="click">Collapse All</span>
+<span id="expand" class="click">Expand All</span>
+</div>
+
+<h3><span>Big Data</span></h3>
+<dl>
+<dt>Enabling Efficient Access Control with Dynamic Policy Updating for Big Data in the Cloud</dt>
+<dd>Kan Yang (City University of Hong Kong, Hong Kong); Xiaohua Jia (City University of Hong Kong, Hong Kong); Kui Ren (State University of New York at Buffalo, USA); Ruitao Xie (City University of Hong Kong, Hong Kong); Liusheng Huang (University of Science and Technology of China, P.R. China)</dd>
+<dt>Online Algorithms for Uploading Deferrable Big Data to the Cloud</dt>
+<dd>Linquan Zhang (University of Calgary, Canada); Zongpeng Li (University of Calgary, Canada); Chuan Wu (The University of Hong Kong, Hong Kong); Minghua Chen (The Chinese University of Hong Kong, P.R. China)</dd>
+<dt>TideWatch: Fingerprinting the Cyclicality of Big Data Workloads</dt>
+<dd>Dan Williams (T. J. Watson Research Center, USA); Shuai Zheng (King Abdullah University of Science and Technology, Saudi Arabia); Xiangliang Zhang (King Abdullah University of Science and Technology, Saudi Arabia); Hani Jamjoom (IBM T. J. Watson Research Center, USA)</dd>
+<dt>Online Load Balancing for MapReduce with Skewed Data Input</dt>
+<dd>Yanfang Le (Simon Fraser Unversity, Canada); Jiangchuan Liu (Simon Fraser University, Canada); Funda Ergun (Indiana University, USA); Dan Wang (The Hong Kong Polytechnic University, Hong Kong)</dd>
+</dl>
+<h3><span>Cellular networks 1</span></h3>
+<dl>
+<dt>Structured Spectrum Allocation and User Association in Heterogeneous Cellular Networks</dt>
+<dd>Wei Bao (University of Toronto, Canada); Ben Liang (University of Toronto, Canada)</dd>
+<dt>Video Delivery over Heterogeneous Cellular Networks: Optimizing Cost and Performance</dt>
+<dd>Konstantinos Poularakis (University of Thessaly, Greece); George Iosifidis (CERTH, Greece); Antonios Argyriou (University of Thessaly, Greece); Leandros Tassiulas (University of Thessaly, Greece)</dd>
+<dt>Cell Planning for Heterogeneous Networks: An Approximation Algorithm</dt>
+<dd>Wentao Zhao (Nanjing University, P.R. China); Shaowei Wang (Nanjing University, P.R. China); Chonggang Wang (InterDigital Communications, USA); Xiaobing Wu (Nanjing University, P.R. China)</dd>
+<dt>A College Admissions Game for Uplink User Association in Wireless Small Cell Networks</dt>
+<dd>Walid Saad (University of Miami, USA); Zhu Han (University of Houston, USA); Rong Zheng (McMaster University, Canada); Mérouane Debbah (Supelec, France); H. Vincent Poor (Princeton University, USA)</dd>
+</dl>
+<h3><span>Cellular networks 2</span></h3>
+<dl>
+<dt>&quot;Wireless Networks Without Edges&quot;: Dynamic Radio Resource Clustering and User Scheduling</dt>
+<dd>Yuhuan Du (University of Texas at Austin, USA); Gustavo de Veciana (The University of Texas at Austin, USA)</dd>
+<dt>Cellular Multi-Coverage with Non-uniform Rates</dt>
+<dd>Omer Gurewitz (Ben Gurion University, Israel); Yakov Sandomirsky (Ben Gurion University of the Negev, Israel); Gabriel Scalosub (Ben-Gurion University, Israel)</dd>
+<dt>Exploiting Mobility in Proportional Fair Cellular Scheduling: Measurements and Algorithms</dt>
+<dd>Robert Margolies (Columbia University, USA); Ashwin Sridharan (AT&amp;T, USA); Vaneet Aggarwal (AT&amp;T Labs - Research, USA); Rittwik Jana (AT&amp;T Labs Research, USA); Nemmara K. Shankaranarayanan (AT&amp;T Laboratories - Research, USA); Vinay A. Vaishampayan (AT&amp;T Labs - Research, USA); Gil Zussman (Columbia University, USA)</dd>
+<dt>User Mobility from the View of Cellular Data Networks</dt>
+<dd>Ying Zhang (Ericsson Research, USA)</dd>
+</dl>
+<h3><span>Cellular networks 3</span></h3>
+<dl>
+<dt>Fast Resource Scheduling in HetNets with D2D Support</dt>
+<dd>Francesco Malandrino (Politecnico di Torino, Italy); Claudio E. Casetti (Politecnico di Torino, Italy); Carla-Fabiana Chiasserini (Politecnico di Torino, Italy); Zana Limani (Politecnico di Torino, Italy)</dd>
+<dt>INDAPSON: An Incentive Data Plan Sharing System Based on Self-Organizing Network</dt>
+<dd>Tuo Yu (Shanghai Jiaotong University, P.R. China); Zilong Zhou (Shanghai Jiao Tong University, P.R. China); Da Zhang (Shanghai Jiao Tong University, P.R. China); Xinbing Wang (Shanghai Jiaotong University, P.R. China); Yunxin Liu (Microsoft Research Asia, P.R. China); Songwu Lu (University of California at Los Angeles, USA)</dd>
+<dt>A Mean Field Game Approach to Scheduling in Cellular Systems</dt>
+<dd>Mayank Manjrekar (Texas A&amp;M University, USA); Vinod Ramaswamy (Texas A&amp;M University, USA); Srinivas Shakkottai (Texas A&amp;M University, USA)</dd>
+<dt>R2D2: Embracing Device-to-Device Communication in Next Generation Cellular Networks</dt>
+<dd>Tarun Bansal (The Ohio State University, USA); Karthikeyan Sundaresan (NEC Labs America, USA); Sampath Rangarajan (NEC Labs America, USA); Prasun Sinha (Ohio State University, USA)</dd>
+</dl>
+<h3><span>Cellular networks 4</span></h3>
+<dl>
+<dt>Automated Dynamic Offset Applied to Cell Association</dt>
+<dd>Majed Haddad (INRIA, France); Habib B.A. Sidi (Orange Labs, France); Piotr Wiecek (Wroclaw University of Technology, Poland); Eitan Altman (INRIA, France)</dd>
+<dt>Interference Coordination Strategies for Content Update Dissemination in LTE-A</dt>
+<dd>Vincenzo Sciancalepore (Institute IMDEA Networks, Italy); Vincenzo Mancuso (Institute IMDEA Networks, Spain); Albert Banchs (Universidad Carlos III de Madrid, Spain); Shmuel Zaks (Technion, Israel); Antonio Capone (Politecnico di Milano, Italy)</dd>
+<dt>Cross-Layer Path Management in Multi-path Transport Protocol for Mobile Devices</dt>
+<dd>Yeon-sup Lim (University of Massachusetts Amherst, USA); Yung-Chih Chen (University of Massachusetts at Amherst, USA); Erich Nahum (IBM T. J. Watson Research Center, USA); Don Towsley (University of Massachusetts at Amherst, USA); Kang-Won Lee (IBM Research, USA)</dd>
+<dt>Classifying Call Profiles in Large-scale Mobile Traffic Datasets</dt>
+<dd>Diala Naboulsi (INSA Lyon, France); Razvan Stanica (INSA Lyon, France); Marco Fiore (National Research Council of Italy, Italy)</dd>
+</dl>
+<h3><span>Cloud computing 1</span></h3>
+<dl>
+<dt>Toward Profit-Seeking Virtual Network Embedding Algorithm via Global Resource Capacity</dt>
+<dd>Long Gong (University of Science and Technology of China, P.R. China); Yonggang Wen (Nanyang Technological University, Singapore); Zuqing Zhu (University of Science and Technology of China, P.R. China); Tony Lee (SJTU, P.R. China)</dd>
+<dt>Online Allocation of Virtual Machines in a Distributed Cloud</dt>
+<dd>Fang Hao (Bell Labs, Alcatel-Lucent, USA); M. Kodialam (Bell Labs, USA); T. V. Lakshman (Bell Labs, Alcatel-Lucent, USA); Sarit Mukherjee (Bell Labs USA, USA)</dd>
+<dt>HadoopWatch: A First Step Towards Comprehensive Traffic Forecasting in Cloud Computing</dt>
+<dd>Yang Peng (Hong Kong University of Science and Technology, Hong Kong); Kai Chen (Hong Kong University of Science and Technology, Hong Kong); Guohui Wang (IBM T. J. Watson Research Center, USA); Wei Bai (Hong Kong University of Science of Technology, Hong Kong); Zhiqiang Ma (Hong Kong University of Science and Technology, Hong Kong); Lin Gu (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Multi-Objective Data Placement for Multi-Cloud Socially Aware Services</dt>
+<dd>Lei Jiao (University of Goettingen, Germany); Jun Li (University of Oregon, USA); Wei Du (University of Goettingen, Germany); Xiaoming Fu (University of Goettingen, Germany)</dd>
+</dl>
+<h3><span>Cloud computing 2</span></h3>
+<dl>
+<dt>Meeting Service Level Agreement Cost-Effectively for Video-on-Demand Applications in the Cloud</dt>
+<dd>Yuhong Zhao (Huazhong University of Science and Technology, P.R. China); Hong Jiang (University of Nebraska at Lincoln, USA); Ke Zhou (Huazhong University of Science and Technology, P.R. China); Zhijie Huang (Huazhong University of Science and Technology, P.R. China); Ping Huang (Virginia Commonwealth University, USA)</dd>
+<dt>Beyond the MDS Bound in Distributed Cloud Storage</dt>
+<dd>Jian Li (Michigan State University, USA); Tongtong Li (Michigan State University, USA); Jian Ren (Michigan State University, USA)</dd>
+<dt>Venice: Reliable Virtual Data Center Embedding in Clouds</dt>
+<dd>Qi Zhang (University of Waterloo, Canada); Mohamed Faten Zhani (University of Waterloo - Canada, Canada); Maissa Jabri (University of Waterloo, Canada); Raouf Boutaba (University of Waterloo, Canada)</dd>
+<dt>Cooperative Repair with Minimum-Storage Regenerating Codes for Distributed Storage</dt>
+<dd>Jun Li (University of Toronto, Canada); Baochun Li (University of Toronto, Canada)</dd>
+</dl>
+<h3><span>Cloud computing 3</span></h3>
+<dl>
+<dt>Delay Guaranteed Live Migration of Virtual Machines</dt>
+<dd>Jiao Zhang (Tsinghua University, P.R. China); Fengyuan Ren (Tsinghua University, P.R. China); Chuang Lin (Tsinghua University, P.R. China)</dd>
+<dt>Dominant Resource Fairness in Cloud Computing Systems with Heterogeneous Servers</dt>
+<dd>Wei Wang (University of Toronto, Canada); Baochun Li (University of Toronto, Canada); Ben Liang (University of Toronto, Canada)</dd>
+<dt>SAP: Similarity-Aware Partitioning for Efficient Cloud Storage</dt>
+<dd>Bharath Balasubramanian (Princeton University, USA); Tian Lan (George Washington University, USA); Mung Chiang (Princeton University, USA)</dd>
+<dt>Scheduling Jobs with Dwindling Resource Requirements in Clouds</dt>
+<dd>Sivan Albagli-Kim (Technion, Israel); Hadas Shachnai (Technion, Israel); Tami Tamir (Efi Arazi School of Computer Science and Engineering, Israel)</dd>
+</dl>
+<h3><span>Cloud computing 4</span></h3>
+<dl>
+<dt>Dynamic Content Allocation for Cloud-assisted Service of Periodic Workloads</dt>
+<dd>György Dán (KTH, Royal Institute of Technology, Sweden); Niklas Carlsson (Linköping University, Sweden)</dd>
+<dt>TOFEC: Achieving Optimal Throughput-Delay Trade-off of Cloud Storage Using Erasure Codes</dt>
+<dd>Guanfeng Liang (DOCOMO Innovations, USA); Ulas Can Kozat (DOCOMO Innovations, USA)</dd>
+<dt>New Bandwidth Sharing and Pricing Policies to Achieve A Win-Win Situation for Cloud Provider and Tenants</dt>
+<dd>Haiying Shen (Clemson University, USA); Zhuozhao Li (Clemson University, USA)</dd>
+<dt>Neptune: Efficient Remote Communication Services for Cloud Backups</dt>
+<dd>Yu Hua (Huazhong University of Science and Technology, P.R. China); Xue Liu (McGill Univerisity, Canada); Dan Feng (Huazhong University of Science and Technology, P.R. China)</dd>
+</dl>
+<h3><span>Cloud computing 5</span></h3>
+<dl>
+<dt>Consolidating Complementary VMs with Spatial/Temporal-awareness in Cloud Datacenters</dt>
+<dd>Liuhua Chen (Clemson University, USA); Haiying Shen (Clemson University, USA)</dd>
+<dt>When Queueing Meets Coding: Optimal-Latency Data Retrieving Scheme in Storage Clouds</dt>
+<dd>Shengbo Chen (The Ohio State University, USA); Ulas Can Kozat (DOCOMO Innovations, USA); Longbo Huang (Tsinghua University, P.R. China); Prasun Sinha (Ohio State University, USA); Guanfeng Liang (DOCOMO Innovations, USA); Xin Liu (UC Davis, USA); Yin Sun (the Ohio State University, USA); Ness B. Shroff (The Ohio State University, USA)</dd>
+<dt>Power Consumption of Virtual Machines with Network Transactions: Measurement and Improvement</dt>
+<dd>Ryan Shea (Simon Fraser University, Canada); Haiyang Wang (University of Minnesota at Duluth, USA); Jiangchuan Liu (Simon Fraser University, Canada)</dd>
+<dt>Can Mobile Cloudlets Support Mobile Applications?</dt>
+<dd>Yujin Li (North Carolina State University, USA); Wenye Wang (NC State University, USA)</dd>
+</dl>
+<h3><span>Cloud computing 6</span></h3>
+<dl>
+<dt>A Deep Investigation Into Network Performance in Virtual Machine Based Cloud Environment</dt>
+<dd>Ryan Shea (Simon Fraser University, Canada); Feng Wang (The University of Mississippi, USA); Haiyang Wang (University of Minnesota at Duluth, USA); Jiangchuan Liu (Simon Fraser University, Canada)</dd>
+<dt>RIAL: Resource Intensity Aware Load Balancing in Clouds</dt>
+<dd>Liuhua Chen (Clemson University, USA); Haiying Shen (Clemson University, USA); Karan Sapra (Clemson University, USA)</dd>
+<dt>Optimal Approximation Algorithm of Virtual Machine Placement for Data Latency Minimization in Cloud Systems</dt>
+<dd>Jian-Jhih Kuo (National Tsing Hua University, Taiwan); Hsiu-Hsien Yang (National Tsing Hua University, Taiwan); Ming-Jer Tsai (National Tsing Hua University, Taiwan)</dd>
+<dt>Using Stop-and-Wait to Improve TCP Throughput in Fast Optical Switching (FOS) Networks over Short Physical Distances</dt>
+<dd>Pablo Jesus Argibay-Losada (SUNY at Buffalo, USA); Kseniia Nozhnina (State University of Information and Communication Technologies, Spain); Gokhan Sahin (University of Aveiro, Portugal); Chunming Qiao (State University of New York at Buffalo, USA)</dd>
+</dl>
+<h3><span>Cloud security and privacy</span></h3>
+<dl>
+<dt>Privacy-Preserving Multi-Keyword Fuzzy Search over Encrypted Data in the Cloud</dt>
+<dd>Bing Wang (Virginia Tech, USA); Shucheng Yu (University of Arkansas at Little Rock, USA); Wenjing Lou (Virginia Tech, USA); Thomas Hou (Virginia Tech, USA)</dd>
+<dt>Efficient Public Integrity Checking for Cloud Data Sharing with Multi-User Modification</dt>
+<dd>Jiawei Yuan (University of Arkansas at Little Rock, USA); Shucheng Yu (University of Arkansas at Little Rock, USA)</dd>
+<dt>A Privacy-aware Cloud-assisted Healthcare Monitoring System via Compressive Sensing</dt>
+<dd>Cong Wang (City University of Hong Kong, Hong Kong); Bingsheng Zhang (State University of New York at Buffalo, USA); Kui Ren (State University of New York at Buffalo, USA); Janet Roveda (University of Arizona, USA); Chang Wen Chen (State University of New York at Buffalo, USA); Zhen Xu (State University of New York at Buffalo, USA)</dd>
+</dl>
+<h3><span>Cognitive radio networks 1</span></h3>
+<dl>
+<dt>A Unified Framework for Wireless Max-Min Utility Optimization with General Monotonic Constraints</dt>
+<dd>Yao-Win Peter Hong (National Tsing Hua University, Taiwan); Chee Wei Tan (City University of Hong Kong, Hong Kong); Cheng-Lin Hsieh (National Tsing-Hua University, Taiwan); Liang Zheng (City University of Hong Kong, Hong Kong); Chia-Han Lee (Academia Sinica, Taiwan)</dd>
+<dt>A Practical Self-Adaptive Rendezvous Protocol in Cognitive Radio Ad Hoc Networks</dt>
+<dd>Xingya Liu (University of North Carolina at Charlotte, USA); Linda Jiang Xie (University of North Carolina at Charlotte, USA)</dd>
+<dt>Delay-Constrained Caching in Cognitive Radio Networks</dt>
+<dd>Jing Zhao (The Pennsylvania State University, USA); Wei Gao (University of Tennessee, USA); Yi Wang (Pennsylvania State University, USA); Guohong Cao (The Pennsylvania State University, USA)</dd>
+<dt>Probability Distribution of Spectral Hole Duration in Cognitive Networks</dt>
+<dd>Jelena Mišić (Ryerson University, Canada); Vojislav B. Mišić (Ryerson University, Canada)</dd>
+</dl>
+<h3><span>Cognitive radio networks 2</span></h3>
+<dl>
+<dt>Rendezvous for Heterogeneous Spectrum-Agile Devices</dt>
+<dd>Shan-Hung Wu (National Tsing Hua University, Taiwan); Ching-Chan Wu (National Tsing Hua University, Taiwan); Wing-Kai Hon (National Tsing Hua University, Taiwan); Kang G. Shin (University of Michigan, USA)</dd>
+<dt>GHz-Wide Sensing and Decoding Using the Sparse Fourier Transform</dt>
+<dd>Haitham Hassanieh (MIT, USA); Lixin Shi (MIT, USA); Omid Abari (MIT, USA); Ezzeldin Hamed (MIT, USA); Dina Katabi (MIT, USA)</dd>
+<dt>Flexauc: Serving Dynamic Demands in Spectrum Trading Markets with Flexible Auction</dt>
+<dd>Peng Lin (HKUST, Hong Kong); Xiaojun Feng (Hong Kong University of Science and Technology, Hong Kong); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Spectrum-Aware Data Replication in Intermittently Connected Cognitive Radio Networks</dt>
+<dd>Jing Zhao (The Pennsylvania State University, USA); Guohong Cao (The Pennsylvania State University, USA)</dd>
+</dl>
+<h3><span>Cognitive radio networks 3</span></h3>
+<dl>
+<dt>QUILT: A Decode/Quantize-Interleave-Transmit Approach to Cooperative Relaying</dt>
+<dd>Siddhartha Brahma (EPFL Switzerland, Switzerland); Melissa Duarte (Rice University, USA); Ayan Sengupta (EPFL Switzerland, Switzerland); I-Hsiang Wang (National Taiwan University, Switzerland); Christina Fragouli (EPFL, Switzerland); Suhas Diggavi (University of California Los Angeles, USA)</dd>
+<dt>FastProbe: Malicious User Detection in Cognitive Radio Networks Through Active Transmissions</dt>
+<dd>Tarun Bansal (The Ohio State University, USA); Bo Chen (Ohio State University, USA); Prasun Sinha (Ohio State University, USA)</dd>
+<dt>Incentivize Cooperative Sensing in Distributed Cognitive Radio Networks with Reputation-based Pricing</dt>
+<dd>Tongjie Zhang (University of Calgary, Canada); Zongpeng Li (University of Calgary, Canada); Reihaneh Safavi-Naini (University of Calgary, Canada)</dd>
+<dt>Hitchhike: Riding Control on Preambles</dt>
+<dd>Xiaoyu Ji (Hong Kong University of Science and Technology, P.R. China); Jiliang Wang (Tsinghua University, P.R. China); Mingyan Liu (University of Michigan, USA); Yubo Yan (PLA University of Science and Technology, P.R. China); Panlong Yang (Institute of Communication Engineering, PLAUST, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Cognitive radio networks 4</span></h3>
+<dl>
+<dt>CACH: Cycle-Adjustable Channel Hopping for Control Channel Establishment in Cognitive Radio Networks</dt>
+<dd>Tsung-Ying Wu (National Taiwan University, Taiwan); Wanjiun Liao (National Taiwan University, Taiwan); Cheng-Shang Chang (National Tsing Hua University, Taiwan)</dd>
+<dt>A Credit-Token-Based Spectrum Etiquette Framework for Coexistence of Heterogeneous Cognitive Radio Networks</dt>
+<dd>Bo Gao (Virginia Tech, USA); Yaling Yang (Virginia Tech, USA); Jung-Min Park (Virginia Polytechnic Institute and State University, USA)</dd>
+<dt>Throughput-Efficient Channel Allocation in Multi-Channel Cognitive Vehicular Networks</dt>
+<dd>You Han (The Ohio State University, USA); Eylem Ekici (The Ohio State University, USA); Haris Kremo (Toyota InfoTechnology Center, Japan); Onur Altintas (Toyota InfoTechnology Center, Japan)</dd>
+<dt>MIMO-based Jamming Resilient Communication in Wireless Networks</dt>
+<dd>Qiben Yan (Virginia Tech, USA); Huacheng Zeng (Virginia Tech, USA); Tingting Jiang (Virginia Tech, USA); Ming Li (Utah State University, USA); Wenjing Lou (Virginia Tech, USA); Thomas Hou (Virginia Tech, USA)</dd>
+</dl>
+<h3><span>Content/name based networking</span></h3>
+<dl>
+<dt>Reducing Forwarding State in Content-Centric Networks with Semi-Stateless Forwarding</dt>
+<dd>Christos Tsilopoulos (Athens University of Economics and Business, Greece); George Xylomenos (Athens University of Economics and Business, Greece); Yannis Thomas (Athens University of Economics and Business (AUEB), Greece)</dd>
+<dt>Scalable Pending Interest Table Design: From Principles to Practice</dt>
+<dd>Haowei Yuan (Washington University in St. Louis, USA); Patrick Crowley (Washington University in St. Louis, USA)</dd>
+<dt>REIN: A Fast Event Matching Approach for Content-based Publish/Subscribe Systems</dt>
+<dd>Shiyou Qian (Shanghai Jiao Tong University, P.R. China); Jian Cao (Shanghai Jiaotong University, P.R. China); Yanmin Zhu (Shanghai Jiao Tong University, P.R. China); Minglu Li (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>A unified approach to the performance analysis of caching systems</dt>
+<dd>Valentina Martina (Politecnico di Torino, Italy); Michele Garetto (Università di Torino, Italy); Emilio Leonardi (Politecnico di Torino, Italy)</dd>
+</dl>
+<h3><span>Cooperative networking</span></h3>
+<dl>
+<dt>Cooperative Cross-Technology Interference Mitigation for Heterogeneous Multi-hop Networks</dt>
+<dd>Yantian Hou (USU, USA); Ming Li (Utah State University, USA); Xu Yuan (Virginia Tech, USA); Thomas Hou (Virginia Tech, USA); Wenjing Lou (Virginia Tech, USA)</dd>
+<dt>WiSlow: A WiFi Network Performance Troubleshooting Tool for End Users</dt>
+<dd>Kyung Hwa Kim (Columbia University, USA); Hyunwoo Nam (Columbia University, USA); Henning Schulzrinne (Columbia University, USA)</dd>
+<dt>Scaling Laws for Heterogeneous Cognitive Radio Networks with Cooperative Secondary Users</dt>
+<dd>Riheng Jia (Shanghai Jiaotong University, P.R. China); Jinbei Zhang (Shanghai Jiaotong University, P.R. China); Xinbing Wang (Shanghai Jiaotong University, P.R. China); Xiaohua Tian (Shanghai Jiaotong University, P.R. China); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong)</dd>
+</dl>
+<h3><span>Data center networking 1</span></h3>
+<dl>
+<dt>On Efficient Bandwidth Allocation for Traffic Variability in Datacenters</dt>
+<dd>Jian Guo (Huazhong University of Science and Technology, P.R. China); Fangming Liu (Huazhong University of Science and Technology, P.R. China); Xiaomeng Huang (Tsinghua University, P.R. China); John Chi Shing Lui (Chinese University of Hong Kong, Hong Kong); Mi Hu (Huazhong University of Science and Technology, P.R. China); Gao Qiao (Huazhong University of Science and Technology, P.R. China); Hai Jin (Huazhong University of Science and Technology, P.R. China)</dd>
+<dt>RepFlow: Minimizing Flow Completion Times with Replicated Flows in Data Centers</dt>
+<dd>Hong Xu (City University of Hong Kong, Hong Kong); Baochun Li (University of Toronto, Canada)</dd>
+<dt>Traffic Engineering with Equal-Cost-MultiPath: An Algorithmic Perspective</dt>
+<dd>Marco Chiesa (Roma Tre University, Italy); Guy Kindler (Hebrew University of Jerusalem, Israel); Michael Schapira (Hebrew University of Jerusalem, USA)</dd>
+<dt>Towards Performance-Centric Fairness in Datacenter Networks</dt>
+<dd>Li Chen (University of Toronto, Canada); Yuan Feng (The Hong Kong Polytechnic University, Hong Kong); Baochun Li (University of Toronto, Canada); Bo Li (Hong Kong University of Science and Technology, Hong Kong)</dd>
+</dl>
+<h3><span>Data center networking 2</span></h3>
+<dl>
+<dt>Let&#39;s Stay Together: Towards Traffic Aware Virtual Machine Placement in Data Centers</dt>
+<dd>Xin Li (Nanjing University, P.R. China); Jie Wu (Temple University, USA); Shaojie Tang (Temple University, Philadelphia, PA, USA); Sanglu Lu (Nanjing University, P.R. China)</dd>
+<dt>On the Design and Analysis of Data Center Network Architectures for Interconnecting Dual-Port Servers</dt>
+<dd>Dawei Li (Temple University, USA); Jie Wu (Temple University, USA)</dd>
+<dt>Practical DCB for Improved Data Center Networks</dt>
+<dd>Brent Stephens (Rice University, USA); Ankit Singla (University of Illinois at Urbana-Champaign, USA); Colin Dixon (IBM Research, USA); Wes Felter (IBM, USA); John Carter (IBM Researh, USA); Alan L. Cox (Rice University, USA)</dd>
+<dt>Distributed Data Storage Systems with Opportunistic Repair</dt>
+<dd>Vaneet Aggarwal (AT&amp;T Labs - Research, USA); Chao Tian (AT&amp;T Labs-Research, Shannon Laboratory, USA); Vinay A. Vaishampayan (AT&amp;T Labs - Research, USA); Yih-Farn Robin Chen (AT&amp;T Labs - Research, USA)</dd>
+</dl>
+<h3><span>Delay tolerant networks</span></h3>
+<dl>
+<dt>Multiple Heterogeneous Data Ferry Trajectory Planning in Wireless Sensor Networks</dt>
+<dd>Lirong Xue (Renmin University of China, P.R. China); Donghyun Kim (North Carolina Central University, USA); Yuqing Zhu (University of Texas at Dallas, USA); Deying Li (Renmin University of China, P.R. China); Wei Wang (Xi&#39;an Jiaotong University, P.R. China); Alade Tokuta (North Carolina Central University, USA)</dd>
+<dt>DSearching: Distributed Searching of Mobile Nodes in DTNs with Floating Mobility Information</dt>
+<dd>Kang Chen (Clemson University, USA); Haiying Shen (Clemson University, USA)</dd>
+<dt>Dynamic Speed Scaling for Energy Minimization in Delay-Tolerant Smartphone Applications</dt>
+<dd>Jeongho Kwak (KAIST, Korea); Okyoung Choi (KAIST, Korea); Song Chong (KAIST, Korea); Prasant Mohapatra (University of California, Davis, USA)</dd>
+<dt>Forwarding Redundancy in Opportunistic Mobile Networks: Investigation and Elimination</dt>
+<dd>Wei Gao (University of Tennessee, USA); Qinghua Li (University of Arkansas, USA); Guohong Cao (The Pennsylvania State University, USA)</dd>
+</dl>
+<h3><span>Energy efficiency in wireless networks 1</span></h3>
+<dl>
+<dt>On the Expected Size of Minimum-Energy Path-preserving Topologies for Wireless Multi-hop Networks</dt>
+<dd>Ashikur Rahman (State University of New York, USA); Nael Abu-Ghazaleh (State University of New York at Binghamton, USA)</dd>
+<dt>Distributed Opportunistic Scheduling for Wireless Networks Powered by Renewable Energy Sources</dt>
+<dd>Hang Li (Texas A&amp;M University, USA); Chuan Huang (Arizona State University, USA); Shuguang Cui (Texas A&amp;M University, USA); Junshan Zhang (Arizona State University, USA)</dd>
+<dt>Relax, but Do Not Sleep: A New Perspective on Green Wireless Networking</dt>
+<dd>Chenfei Gao (Syracuse University, USA); Weiyi Zhang (AT&amp;T Labs Research, USA); Jian Tang (Syracuse University, USA); Chonggang Wang (InterDigital Communications, USA); Shihong Zou (Beijing University of Posts&amp;Telecommunication, P.R. China); Sen Su (Beijing University of Posts &amp; Telecommunications (BUPT), P.R. China)</dd>
+<dt>Energy Optimization Through Traffic Aggregation in Wireless Networks</dt>
+<dd>Wenjie Hu (The Pennsylvania State University, USA); Guohong Cao (The Pennsylvania State University, USA)</dd>
+</dl>
+<h3><span>Energy efficiency in wireless networks 2</span></h3>
+<dl>
+<dt>Microeconomic Analysis of Base-Station Sharing in Green Cellular Networks</dt>
+<dd>Bingjie Leng (Tsinghua University, P.R. China); Parisa Mansourifard (University of Southern California, USA); Bhaskar Krishnamachari (University of Southern California, USA)</dd>
+<dt>Safe Charging for Wireless Power Transfer</dt>
+<dd>Haipeng Dai (Nanjing University, P.R. China); Yunhuai Liu (Third Research Institute of Ministry of Public Security, P.R. China); Guihai Chen (Shanghai Jiao Tong University, P.R. China); Xiaobing Wu (Nanjing University, P.R. China); Tian He (University of Minnesota, USA)</dd>
+<dt>Energy-efficient Cooperative Broadcast in Fading Wireless Networks</dt>
+<dd>Chenxi Qiu (Clemson University, USA); Haiying Shen (Clemson University, USA); Lei Yu (Clemson University, USA)</dd>
+<dt>Performance-aware Energy Optimization on Mobile Devices in Cellular Network</dt>
+<dd>Yong Cui (Tsinghua University, P.R. China); Shihan Xiao (University of Tsinghua, P.R. China); Xin Wang (Stony Brook University, USA); Minming Li (City University of Hong Kong, Hong Kong); Hongyi Wang (Tsinghua University, P.R. China); Zeqi Lai (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Energy efficiency in wireless networks 3</span></h3>
+<dl>
+<dt>Energy Efficient Wifi Tethering on a Smartphone</dt>
+<dd>Kyoung-Hak Jung (Pohang University of Science and Technology (POSTECH), Korea); Yuepeng Qi (Pohang University of Science and Technology (POSTECH), Korea); Chansu Yu (Cleveland State University, USA); Young-Joo Suh (Pohang University of Science and Technology (POSTECH), Korea)</dd>
+<dt>Fair Energy-efficient Sensing Task Allocation in Participatory Sensing with Smartphones</dt>
+<dd>Qingwen Zhao (Shanghai Jiao Tong University, P.R. China); Yanmin Zhu (Shanghai Jiao Tong University, P.R. China); Hongzi Zhu (Shanghai Jiao Tong University, P.R. China); Jian Cao (Shanghai Jiaotong University, P.R. China); Xue Guangtao (Shanghai Jiao Tong University, P.R. China); Bo Li (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Energy-efficient capacity optimization in wireless networks</dt>
+<dd>Lu Liu (Illinois Institute of Technology, USA); Xianghui Cao (Illinois Institute of Technology, USA); Yu Cheng (Illinois Institute of Technology, USA); Lili Du (Illinois Institute of Technology, USA); Wei Song (University of New Brunswick, Canada); Yu Wang (University of North Carolina at Charlotte, USA)</dd>
+<dt>Improved Structures for Data Collection in Wireless Sensor Networks</dt>
+<dd>Jon Crowcroft (University of Cambridge, United Kingdom); Michael Segal (Ben-Gurion University of the Negev, Israel); Liron Levin (Ben-Gurion University of the Negev, Israel)</dd>
+</dl>
+<h3><span>Fault tolerance and survivability 1</span></h3>
+<dl>
+<dt>Geometric Evaluation of Survivability of Disaster-affected Network with Probabilistic Failure</dt>
+<dd>Hiroshi Saito (NTT, Japan)</dd>
+<dt>Keep Forwarding: Towards K-link Failure Resilient Routing</dt>
+<dd>Baohua Yang (IBM Research, P.R. China); Junda Liu (University of California, Berkeley, USA); Scott Shenker (U. C. Berkeley and ICSI, USA); Jun Li (Tsinghua University, P.R. China); Kai Zheng (IBM China Research Lab, P.R. China)</dd>
+<dt>Restorable Logical Topology in the Face of No or Partial Traffic Demand Knowledge</dt>
+<dd>Reuven Cohen (Technion, Israel); Gabi Nakibly (National EW Research &amp; Simulation Center, Israel)</dd>
+<dt>Max-Flow Min-Cut Theorem and Faster Algorithms in a Circular Disk Failure Model</dt>
+<dd>Yusuke Kobayashi (University of Tokyo, Japan); Kensuke Otsuki (University of Tokyo, Japan)</dd>
+</dl>
+<h3><span>Fault tolerance and survivability 2</span></h3>
+<dl>
+<dt>Signaling Free Localization of Node Failures in All-Optical Networks</dt>
+<dd>János Tapolcai (Budapest University of Technology and Economics, Hungary); Lajos Rónyai (Budapest University of Technology and Economics (BME), Hungary); Éva Hosszu (Budapest University of Technology and Economics, Hungary); Pin-Han Ho (University of Waterloo, Canada); Suresh Subramaniam (The George Washington University, USA)</dd>
+<dt>Fault Tolerant Barrier Coverage for Wireless Sensor Networks</dt>
+<dd>Zhibo Wang (University of Tennessee, Knoxville, USA); Honglong Chen (China University of Petroleum, P.R. China); Qing Cao (University of Tennessee, USA); Hairong Qi (the University of Tennessee, USA); Zhi Wang (Zhejiang University, P.R. China)</dd>
+<dt>Heterogeneity-Aware Data Regeneration in Distributed Storage Systems</dt>
+<dd>Yan Wang (Fudan University, P.R. China); Dongsheng Wei (Fudan University, P.R. China); Xunrui Yin (University of Calgary, Canada); Xin Wang (Fudan University, P.R. China)</dd>
+<dt>CauseInfer: Automatic and Distributed Performance Diagnosis with Hierarchical Causality Graph in Large Distributed Systems</dt>
+<dd>Chen Pengfei (Xi&#39;an Jiaotong University, P.R. China); Yong Qi (Xi&#39;an Jiaotong University, P.R. China); Di Hou (Xi&#39;an Jiaotong University, P.R. China); Zheng Pengfei (Xi&#39;an Jiaotong University, P.R. China)</dd>
+</dl>
+<h3><span>Fault tolerance and survivability 3</span></h3>
+<dl>
+<dt>Rippler: Delay Injection for Service Dependency Detection</dt>
+<dd>Ali Zand (UC Santa Barbara, USA); Giovanni Vigna (University of California Santa Barbara, USA); Richard Kemmerer (University of California, Santa Barbara, USA); Christopher Kruegel (University of California, Santa Barbara, USA)</dd>
+<dt>IP Fast Rerouting for Multi-Link Failures</dt>
+<dd>Theodore Elhourani (University of Arizona, USA); Abishek Gopalan (University of Arizona, USA); Srinivasan Ramasubramanian (University of Arizona, USA)</dd>
+<dt>Aggrecode: Constructing Route Intersection for Data Reconstruction in Erasure Coded Storage Systems</dt>
+<dd>Jing Zhang (McGill University, Canada); Xiangke Liao (NUDT, P.R. China); Li Shanshan (National University of Defense Technology, P.R. China); Yu Hua (Huazhong University of Science and Technology, P.R. China); Xue Liu (McGill Univerisity, Canada); Bin Lin (National University of Defense Technology, P.R. China)</dd>
+</dl>
+<h3><span>Firewalls and network intrusion detection</span></h3>
+<dl>
+<dt>Transductive Malware Label Propagation: Find Your Lineage From Your Neighbors</dt>
+<dd>Deguang Kong (University of Texas at Arlington, USA); Guanhua Yan (Los Alamos National Laboratory, USA)</dd>
+<dt>LD-Sketch: A Distributed Sketching Design for Accurate and Scalable Anomaly Detection in Network Data Streams</dt>
+<dd>Qun Huang (The Chinese University of Hong Kong, P.R. China); Patrick Pak-Ching Lee (The Chinese University of Hong Kong, Hong Kong)</dd>
+<dt>ProWord: An Unsupervised Approach to Protocol Feature Word Extraction</dt>
+<dd>Zhuo Zhang (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Zhibin Zhang (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Patrick Pak-Ching Lee (The Chinese University of Hong Kong, Hong Kong); Yunjie Liu (Beijing University of Posts and Telecommunications, P.R. China); Gaogang Xie (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China)</dd>
+<dt>TorWard: Discovery of Malicious Traffic over Tor</dt>
+<dd>Zhen Ling (Southeast University, P.R. China); Luo Junzhou (Southeast University, P.R. China); Kui Wu (University of Victoria, Canada); Wei Yu (Towson University, USA); Xinwen Fu (University of Massachusetts Lowell, USA)</dd>
+</dl>
+<h3><span>Flow and congestion control</span></h3>
+<dl>
+<dt>From Least Interference-Cost Paths to Maximum (Concurrent) Multiflow in MC-MR Wireless Networks</dt>
+<dd>Peng-Jun Wan (Illinois Institute of Technology, USA); Zhu Wang (Illinois Institute of Technology, USA); Lei Wang (Dalian University of Technology, P.R. China); Zhiguo Wan (Tsinghua University, P.R. China); Sai Ji (Nanjing University of Information Science &amp; Technology, P.R. China)</dd>
+<dt>Multirate Multicast: Optimal Algorithms and Implementation</dt>
+<dd>Georgios S. Paschos (Massachusetts Institute of Technology, USA); Chih-ping Li (MIT, USA); Eytan Modiano (MIT, USA); Kostas Choumas (University of Thessaly, Greece); Thanasis Korakis (Polytechnic Institute of New York University, USA)</dd>
+<dt>Routing Games with Progressive Filling</dt>
+<dd>Tobias Harks (Maastricht University, The Netherlands); Alexander Skopalik (Paderborn, Germany); Martin Hoefer (Saarland University, Germany); Kevin Schewior (Berlin, Germany)</dd>
+<dt>Heat-Diffusion: A Pareto Optimal Dynamic Routing for Multiclass Multihop Wireless Networks</dt>
+<dd>Reza Banirazi (University of Southern California, USA); Edmond Jonckheere (USC, USA); Bhaskar Krishnamachari (University of Southern California, USA)</dd>
+</dl>
+<h3><span>Internet monitoring and measurement 1</span></h3>
+<dl>
+<dt>Spatio-temporal Factorization of Log Data for Understanding Network Events</dt>
+<dd>Tatsuaki Kimura (NTT, Japan); Keisuke Ishibashi (NTT, Japan); Tatsuya Mori (Waseda University, Japan); Hiroshi Sawada (NTT Corporation, Japan); Tsuyoshi Toyono (NTT Corporation, Japan); Ken Nishimatsu (NTT, Japan); Akio Watanabe (NTT Corporation, Japan); Akihiro Shimoda (NTT Corporation, Japan); Kohei Shiomoto (NTT, Japan)</dd>
+<dt>Packet Classification Using Binary Content Addressable Memory</dt>
+<dd>Alex X. Liu (Michigan State University, USA); Chad Meiners (MIT Lincoln Laboratory, USA); Eric Torng (Michigan State University, USA)</dd>
+<dt>A Reduction-based Approach Towards Scaling Up Formal Analysis of Internet Configurations</dt>
+<dd>Anduo Wang (University of Pennsylvania, USA); Alexander Gurney (University of Pennsylvania, USA); Xianglong Han (University of Pennsylvania, USA); Jinyan Cao (University of Pennsylvania, USA); Boon Thau Loo (University of Pennsylvania, USA); Carolyn Talcott (SRI International, USA); Andre Scedrov (University of Pennsylvania, USA)</dd>
+<dt>Mining Checkins From Location-sharing Services for Client-independent IP Geolocation</dt>
+<dd>Hao Liu (Tsinghua University, P.R. China); Yaoxue Zhang (Tsinghua University, P.R. China); Yuezhi Zhou (Tsinghua University, P.R. China); Di Zhang (Tsinghua University, P.R. China); Xiaoming Fu (University of Goettingen, Germany); K. K. Ramakrishnan (Rutgers University, USA)</dd>
+</dl>
+<h3><span>Internet monitoring and measurement 2</span></h3>
+<dl>
+<dt>An Overlay Automata Approach to Regular Expression Matching</dt>
+<dd>Alex X. Liu (Michigan State University, USA); Eric Torng (Michigan State University, USA)</dd>
+<dt>Contextual Localization Through Network Traffic Analysis</dt>
+<dd>Aveek K Das (University of California, Davis, USA); Parth Pathak (University of California, Davis, USA); Chen-Nee Chuah (University of California, Davis, USA); Prasant Mohapatra (University of California, Davis, USA)</dd>
+<dt>Intelligent SDN based Traffic (de)Aggregation and Measurement Paradigm (iSTAMP)</dt>
+<dd>Mehdi Malboubi (University of California, Davis, USA); Liyuan Wang (UC Davis, USA); Chen-Nee Chuah (University of California, Davis, USA); Puneet Sharma (HP Labs Palo Alto, USA)</dd>
+<dt>Separating Wheat from Chaff: Winnowing Unintended Prefixes using Machine Learning</dt>
+<dd>Andra Lutu (Institute IMDEA Networks, Spain); Marcelo Bagnulo (University Carlos III of Madrid, Spain); Jesus Cid-Sueiro (University Carlos III de Madrid, Spain); Olaf M Maennel (Loughborough University, United Kingdom)</dd>
+</dl>
+<h3><span>Internet monitoring and measurement 3</span></h3>
+<dl>
+<dt>What Scale of Audience a Campaign can Reach in What Price?</dt>
+<dd>Yubao Zhang (College of William and Mary, USA); Xin Ruan (College of William and Mary, USA); Haining Wang (College of William and Mary, USA); Hui Wang (National University of Defense Technology, P.R. China)</dd>
+<dt>Optimal Collaborative Access Point Association in Wireless Networks</dt>
+<dd>Ouldooz Baghban Karimi (Simon Fraser University, Canada); Jiangchuan Liu (Simon Fraser University, Canada); Jennifer Rexford (Princeton University, USA)</dd>
+<dt>kBF: a Bloom Filter for Key-Value Storage with an Application on Approximate State</dt>
+<dd>Sisi Xiong (University of Tennessee, Knoxville, USA); Yanjun Yao (University of Tennessee, Knoxville, USA); Qing Cao (University of Tennessee, USA); Tian He (University of Minnesota, USA)</dd>
+<dt>Detecting Malicious HTTP Redirections Using Trees of User Browsing Activity</dt>
+<dd>Hesham Mekky (University of Minnesota, USA); Ruben Torres (Narus Inc., USA); Zhi-Li Zhang (University of Minnesota, USA); Sabyasachi Saha (Narus Inc., USA); Antonio Nucci (Narus inc., USA)</dd>
+</dl>
+<h3><span>Internet monitoring and measurement 4</span></h3>
+<dl>
+<dt>Bloom Tree: A Search Tree Based on Bloom Filters for Multiple-Set Membership Testing</dt>
+<dd>MyungKeun Yoon (Kookmin University, Korea); JinWoo Son (Kookmin University, Korea); Seon-Ho Shin (Kookmin University, Korea)</dd>
+<dt>A longitudinal analysis of Internet rate limitations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+<dd>João Taveira Araújo (University College London, United Kingdom); Raul Landa (University College London, United Kingdom); Richard G Clegg (University College London, United Kingdom); Kensuke Fukuda (National Institute of Informatics, Japan); George Pavlou (University College London, United Kingdom)</dd>
+<dt>Monitor Placement for Maximal Identifiability in Network Tomography</dt>
+<dd>Liang Ma (Imperial College London, United Kingdom); Ting He (IBM Research, USA); Kin K. K. Leung (Imperial College, United Kingdom); Ananthram Swami (Army Research Lab., USA); Don Towsley (University of Massachusetts at Amherst, USA)</dd>
+<dt>&quot;Can you SEE me now?&quot; A Measurement Study of Mobile Video Calls</dt>
+<dd>Chenguang Yu (Polytechnic Institute of NYU, USA); Yang Xu (Polytechnic Institute of NYU, USA); Bo Liu (Polytechnic Institute of New York University, USA); Yong Liu (Polytechnic Institute of NYU, USA)</dd>
+</dl>
+<h3><span>Localization 1</span></h3>
+<dl>
+<dt>3D Surface Localization with Terrain Model</dt>
+<dd>Yang Yang (University of Louisiana at Lafayette, USA); Miao Jin (University of Louisiana at Lafayette, USA); Hongyi Wu (University of Louisiana at Lafayette, USA)</dd>
+<dt>Towards Ubiquitous Indoor Localization Service Leveraging Environmental Physical Features</dt>
+<dd>Yang Tian (Peking University, P.R. China); Ruipeng Gao (Peking University, P.R. China); Kaigui Bian (Peking University, P.R. China); Fan Ye (Peking University, P.R. China); Tao Wang (Peking University, P.R. China); Yizhou Wang (Peking University, P.R. China); XiaoMing Li (Peking University, P.R. China)</dd>
+<dt>Near-Pri: Private, Proximity Based Location Sharing</dt>
+<dd>Edmund Novak (William and Mary, USA); Qun Li (College of William and Mary, USA)</dd>
+<dt>Suave: Swarm Underwater Autonomous Vehicle Localization</dt>
+<dd>Jun Liu (University of Connecticut, USA); Zhaohui Wang (Michigan Technological University, USA); Zheng Peng (University of Connecticut, USA); Jun-Hong Cui (University of Connecticut, USA); Lance Fiondella (University of Massachusetts, USA)</dd>
+</dl>
+<h3><span>Localization 2</span></h3>
+<dl>
+<dt>Electronic Frog Eye: Counting Crowd Using WiFi</dt>
+<dd>Wei Xi (Xi&#39;an Jiaotong University, P.R. China); Jizhong Zhao (Xi&#39;an Jiaotong University, P.R. China); Xiang-Yang Li (Illinois Institute of Technology, USA); Kun Zhao (Xi&#39;an Jiaotong University, P.R. China); Shaojie Tang (Temple University, USA); Xue Liu (McGill Univerisity, Canada); Zhiping Jiang (Xian Jiaotong University, P.R. China)</dd>
+<dt>Shake and Walk: Acoustic Direction Finding and Fine-grained Indoor Localization Using Smartphones</dt>
+<dd>Wenchao Huang (University of Science and Technology of China, P.R. China); Yan Xiong (University of Science and Technology of China, P.R. China); Xiang-Yang Li (Illinois Institute of Technology, USA); Hao Lin (Jiangnan University, P.R. China); Xufei Mao (Tsinghua University, P.R. China); Panlong Yang (Institute of Communication Engineering, PLAUST, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+<dt>TOC: Localizing Wireless Rechargeable Sensors with Time of Charge</dt>
+<dd>Yuanchao Shu (Zhejiang University, P.R. China); Peng Cheng (Zhejiang University, P.R. China); Yu Gu (Singapore University of Technology and Design, Singapore); Jiming Chen (Zhejiang University, P.R. China); Tian He (University of Minnesota, USA)</dd>
+<dt>Anchor-free Backscatter Positioning for RFID Tags with High Accuracy</dt>
+<dd>Tianci Liu (Tsinghua University, P.R. China); Lei Yang (Xi&#39;an Jiaotong University, P.R. China); Qiongzheng Lin (Tsinghua University, P.R. China); Yi Guo (Hongkong University of Science and Technology, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Localization and location privacy</span></h3>
+<dl>
+<dt>Achieving Privacy Preservation in WiFi Fingerprint-Based Localization</dt>
+<dd>Hong Li (Institute of Information Engineering, Chinese Academy of Sciences, P.R. China); Limin Sun (Institute of Information Engineering, China Academy of Science, Beijing, P.R. China); Haojin Zhu (Shanghai Jiao Tong University, P.R. China); Xiang Lu (Institute of Information Engineering, CAS, P.R. China); Xiuzhen Cheng (George Washington Univ, USA)</dd>
+<dt>Multi-lateral Privacy-Preserving Localization in Pervasive Environments</dt>
+<dd>Tao Shu (Oakland University, USA); Yingying Chen (Stevens Institute of Technology, USA); Jie Yang (Oakland University, USA); Albert Williams (University of Massachusetts Amherst, USA)</dd>
+<dt>Privacy-preserving High-quality Map Generation with Participatory sensing</dt>
+<dd>Xi Chen (Tsinghua University, P.R. China); Xiaopei Wu (Tsinghua University, P.R. China); Xiang-Yang Li (Illinois Institute of Technology, USA); Yuan He (Tsinghua University, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+<dt>A Stochastic Game for Privacy Preserving Context Sensing on Mobile Phone</dt>
+<dd>Wei Wang (Hong Kong University of Science and Technology, Hong Kong); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong)</dd>
+</dl>
+<h3><span>Medium access control 1</span></h3>
+<dl>
+<dt>Provable Per-Link Delay-Optimal CSMA for General Wireless Network Topology</dt>
+<dd>Dongmyung Lee (KAIST, Korea); Donggyu Yun (KAIST, Korea); Jinwoo Shin (KAIST, Korea); Yung Yi (KAIST, Korea); Se-Young Yun (KTH, Sweden)</dd>
+<dt>Analysis of a Proportionally Fair and Locally Adaptive Spatial Aloha in Poisson Networks</dt>
+<dd>Francois Baccelli (INRIA-ENS, France); Bartlomiej Błaszczyszyn (Inria-Ens, France); Chandramani K. Singh (University of Illinois at Urbana Champaign, India)</dd>
+<dt>Communication Through Collisions: Opportunistic Utilization of Past Receptions</dt>
+<dd>Alireza Vahid (Cornell University, USA); Mohammad Ali Maddah-Ali (Bell Labs, Alcatel Lucent, USA); Salman Avestimehr (Cornell University, USA)</dd>
+<dt>Optimal CSMA-based Wireless Communication with Worst-case Delay and Non-uniform Sizes</dt>
+<dd>Hongxing Li (University of California at Davis, USA); Nitin Vaidya (University of Illinois at Urbana-Champaign, USA)</dd>
+</dl>
+<h3><span>Medium access control 2</span></h3>
+<dl>
+<dt>Competitive MAC under Adversarial SINR</dt>
+<dd>Adrian Ogierman (University of Paderborn, Germany); Andrea Richa (Arizona State University, USA); Christian Scheideler (Paderborn University, Germany); Stefan Schmid (T-Labs &amp; TU Berlin, Germany); Jin Zhang (Google, USA)</dd>
+<dt>Interference-aware proportional fairness for Multi-rate Wireless Networks</dt>
+<dd>Douglas Blough (Georgia Institute of Technology, USA); Giovanni Resta (Istituto di Informatica e Telematica, Italy); Paolo Santi (IIT-CNR, Italy)</dd>
+<dt>FD-MMAC: Combating Multi-Channel Hidden and Exposed Terminals Using a Single Transceiver</dt>
+<dd>Yan Zhang (University of Arizona, USA); Loukas Lazos (University of Arizona, USA); Kai Chen (University of Arizona, USA); Bocan Hu (University of Arizona, USA); Swetha Shivaramaiah (University of Arizona, USA)</dd>
+<dt>Optimal Rate Sampling in 802.11 Systems</dt>
+<dd>Richard Combes (KTH, Royal Institute of Technology, Sweden); Alexandre Proutiere (Microsoft Research, United Kingdom); Donggyu Yun (KAIST, Korea); Jungseul Ok (KAIST, Korea); Yung Yi (KAIST, Korea)</dd>
+</dl>
+<h3><span>Mobile Data Offloading</span></h3>
+<dl>
+<dt>Is it Worth to be Patient? Analysis and Optimization of Delayed Mobile Data Offloading</dt>
+<dd>Fidan Mehmeti (EURECOM, France); Thrasyvoulos Spyropoulos (EURECOM, France)</dd>
+<dt>Mobile Offloading in the Wild: Findings and Lessons Learned Through a Real-life Experiment with a New Cloud-aware System</dt>
+<dd>Marco Valerio Barbera (Sapienza University of Rome, Italy); Sokol Kosta (Sapienza University of Rome, Italy); Alessandro Mei (Sapienza University of Rome, Italy); Vasile Claudiu Perta (Sapienza University of Rome, Italy); Julinda Stefa (Sapienza University of Rome, Italy)</dd>
+<dt>Ready, Set, Go: Coalesced Offloading from Mobile Devices to the Cloud</dt>
+<dd>Liyao Xiang (University of Toronto, Canada); Shiwen Ye (University of Toronto, Canada); Yuan Feng (The Hong Kong Polytechnic University, Hong Kong); Baochun Li (University of Toronto, Canada); Bo Li (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>TOSS: Traffic Offloading by Social Network Service-Based Opportunistic Sharing in Mobile Social Networks</dt>
+<dd>Xiaofei Wang (Seoul National University, Korea); Min Chen (Huazhong University of Science and Technology, P.R. China); Zhu Han (University of Houston, USA); Dapeng Oliver Wu (University of Florida, USA); Taekyoung Kwon (Seoul National University, Korea)</dd>
+</dl>
+<h3><span>Multimedia networking 1</span></h3>
+<dl>
+<dt>Robust Uncoded Video Transmission over Wireless Fast Fading Channel</dt>
+<dd>Hao Cui (University of Science and Technology of China, P.R. China); Chong Luo (Microsoft Research, P.R. China); Chang Wen Chen (State University of New York at Buffalo, USA); Feng Wu (Microsoft Research Asia, P.R. China)</dd>
+<dt>Joint Online Transcoding and Geo-distributed Delivery for Dynamic Adaptive Streaming</dt>
+<dd>Zhi Wang (Tsinghua University, P.R. China); Lifeng Sun (Tsinghua University, P.R. China); Chuan Wu (The University of Hong Kong, Hong Kong); Wenwu Zhu (Tsinghua University, P.R. China); Shiqiang Yang (Tsinghua University, P.R. China)</dd>
+<dt>Improving mobile video streaming with link aware scheduling and client caches</dt>
+<dd>Randeep Bhatia (Bell Labs, Alcatel-Lucent, USA); T. V. Lakshman (Bell Labs, Alcatel-Lucent, USA); Arun Netravali (OMNICapital, USA); Krishan Sabnani (Alcatel-Lucent, USA)</dd>
+<dt>NOVA: QoE-driven Optimization of DASH-based Video Delivery in Networks</dt>
+<dd>Vinay Joseph (Qualcomm, USA); Gustavo de Veciana (The University of Texas at Austin, USA)</dd>
+</dl>
+<h3><span>Multimedia networking 2</span></h3>
+<dl>
+<dt>Reliable Video Multicast over Wi-Fi Networks with Coordinated Multiple APs</dt>
+<dd>Munhwan Choi (Seoul National University, Korea); Weiping Sun (Seoul National University, Korea); Jonghoe Koo (Seoul National University, Korea); Sunghyun Choi (Seoul National University, Korea); Kang G. Shin (University of Michigan, USA)</dd>
+<dt>Optimal Rate Allocation for Adaptive Wireless Video Streaming in Networks with User Dynamics</dt>
+<dd>Vinay Joseph (Qualcomm, USA); Sem Borst (Alcatel-Lucent, Bell Labs, USA); Marty Reiman (Bell Labs, Lucent Technologies, USA)</dd>
+<dt>SoCast: Social Ties Based Cooperative Video Multicast</dt>
+<dd>Yang Cao (Huazhong University of Science and Technology, P.R. China); Xu Chen (Arizona State University, USA); Junshan Zhang (Arizona State University, USA); Tao Jiang (Huazhong University of Science and Technology, P.R. China)</dd>
+<dt>On the Geographic Patterns of a Large-scale Mobile Video-on-Demand System</dt>
+<dd>Zhenyu Li (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Gaogang Xie (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Jiali Lin (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Yun Jin (PPlive, P.R. China); Mohamed-Ali Kaafar (INRIA France, France); Kavé Salamatian (LISTIC PolyTech, Université de Savoie Chambery Annecy, France)</dd>
+</dl>
+<h3><span>Network coding</span></h3>
+<dl>
+<dt>A Matroid Theory Approach to Multicast Network Coding</dt>
+<dd>Xunrui Yin (University of Calgary, Canada); Zongpeng Li (University of Calgary, Canada); Xin Wang (Fudan University, P.R. China)</dd>
+<dt>DAWN: Defending Against Wormhole Attacks in Wireless Network Coding Systems</dt>
+<dd>Shiyu Ji (Oklahoma State University, USA); Tingting Chen (Oklahoma State University, USA); Sheng Zhong (Nanjing University, P.R. China); Subhash Kak (Oklahoma State University, USA)</dd>
+<dt>Secure Cloud Storage Meets with Secure Network Coding</dt>
+<dd>Fei Chen (The Chinese University of Hong Kong, Hong Kong); Tao Xiang (Chongqing University, P.R. China); Yuanyuan Yang (Stony Brook University, USA); Sherman S. M. Chow (Chinese University of Hong Kong, Hong Kong)</dd>
+<dt>Robust and Optimal Opportunistic Scheduling for Downlink 2-Flow Inter-session Network Coding with Varying Channel Quality</dt>
+<dd>Wei-Cheng Kuo (Purdue University, USA); Chih-Chun Wang (Purdue University, USA)</dd>
+</dl>
+<h3><span>Network economics and pricing 1</span></h3>
+<dl>
+<dt>Profit-Maximizing Incentive for Participatory Sensing</dt>
+<dd>Tie Luo (Institute for Infocomm Research, Singapore); Hwee Pink Tan (Institute for Infocomm Research, Singapore); Lirong Xia (Harvard University, USA)</dd>
+<dt>Assurable, Transparent, and Mutual Restraining E-voting Involving Multiple Conflicting Parties</dt>
+<dd>Xukai Zou (School of Science, Purdue University-Indianapolis, USA); Huian Li (Purdue University Indianapolis, USA); Yan Sui (Purdue University Indianapolis, USA); Wei Peng (Indiana University-Purdue University Indianapolis, USA); Feng Li (Indiana University-Purdue University Indianapolis, USA)</dd>
+<dt>PROMISE: A Framework for Truthful and Profit Maximizing Spectrum Double Auctions</dt>
+<dd>Dejun Yang (Colorado School of Mines, USA); Xiang Zhang (Arizona State University, USA); Guoliang Xue (Arizona State University, USA)</dd>
+<dt>Dynamic Pricing and Profit Maximization for the Cloud with Geo-distributed Data Centers</dt>
+<dd>Jian Zhao (The University of Hong Kong, Hong Kong); Hongxing Li (University of California at Davis, USA); Chuan Wu (The University of Hong Kong, Hong Kong); Zongpeng Li (University of Calgary, Canada); Zhizhong Zhang (The University of Hong Kong, Hong Kong); Francis C.M. Lau (The University of Hong Kong, Hong Kong)</dd>
+</dl>
+<h3><span>Network economics and pricing 2</span></h3>
+<dl>
+<dt>Trade-offs in Optimizing the Cache Deployments of CDNs</dt>
+<dd>Syed Hasan (Institute IMDEA Networks, Spain); Sergey Gorinsky (Institute IMDEA Networks, Spain); Constantine Dovrolis (Georgia Institute of Technology, USA); Ramesh K Sitaraman (University of Massachusetts at Amherst, USA)</dd>
+<dt>Dynamic Resource Provisioning in Cloud Computing: A Randomized Auction Approach</dt>
+<dd>Linquan Zhang (University of Calgary, Canada); Zongpeng Li (University of Calgary, Canada); Chuan Wu (The University of Hong Kong, Hong Kong)</dd>
+<dt>Exploring Bundling Sale Strategy in Online Service Markets with Network Effects</dt>
+<dd>Weijie Wu (Shanghai Jiao Tong University, P.R. China); Richard T. B. Ma (National University of Singapore, Singapore); John Chi Shing Lui (Chinese University of Hong Kong, Hong Kong)</dd>
+<dt>Enabling Crowd-Sourced Mobile Internet Access</dt>
+<dd>George Iosifidis (CERTH, Greece); Lin Gao (The Chinese University of Hong Kong, Hong Kong); Jianwei Huang (The Chinese University of Hong Kong, Hong Kong); Leandros Tassiulas (University of Thessaly, Greece)</dd>
+</dl>
+<h3><span>Network economics and pricing 3</span></h3>
+<dl>
+<dt>Hybrid Data Pricing for Network-Assisted User-Provided Connectivity</dt>
+<dd>Lin Gao (The Chinese University of Hong Kong, Hong Kong); George Iosifidis (CERTH, Greece); Jianwei Huang (The Chinese University of Hong Kong, Hong Kong); Leandros Tassiulas (University of Thessaly, Greece)</dd>
+<dt>EasyBid: Enabling Cellular Offloading via Small Players</dt>
+<dd>Zhixue Lu (Ohio State University, USA); Prasun Sinha (Ohio State University, USA); R. Srikant (University of Illinois at Urbana-Champaign, USA)</dd>
+<dt>Time Dependent Pricing in Wireless Data Networks: Flat-Rate vs. Usage-Based Schemes</dt>
+<dd>Liang Zhang (The Hong Kong Polytechnic University, Hong Kong); Weijie Wu (Shanghai Jiao Tong University, P.R. China); Dan Wang (The Hong Kong Polytechnic University, Hong Kong)</dd>
+<dt>Double Auctions for Dynamic Spectrum Allocation</dt>
+<dd>Wei Dong (University of Texas at Austin, USA); Swati Rallapalli (University of Texas at Austin, USA); Rittwik Jana (AT&amp;T Labs Research, USA); Lili Qiu (The University of Texas at Austin, USA); K. K. Ramakrishnan (Rutgers University, USA); Yin Zhang (University of Texas at Austin, USA)</dd>
+</dl>
+<h3><span>Overlay and peer-to-peer networks</span></h3>
+<dl>
+<dt>A Stable Fountain Code Mechanism for Peer-to-Peer Content Distribution</dt>
+<dd>Cedric Westphal (Huawei Innovation Center, USA)</dd>
+<dt>Maximizing the Number of Satisfied Subscribers in Pub/Sub Systems Under Capacity Constraints</dt>
+<dd>Vinay Setty (University of Oslo, Norway); Gunnar Kreitz (KTH - Royal Institute of Technology, Sweden); Guido Urdaneta (Spotify, Sweden); Roman Vitenberg (University of Oslo, Norway); Maarten van Steen (VU University Amsterdam, The Netherlands)</dd>
+<dt>Open Peering by Internet Transit Providers: Peer Preference or Peer Pressure?</dt>
+<dd>Aemen Lodhi (Georgia Institute of Technology, USA); Amogh Dhamdhere (CAIDA, University of California, San Diego, USA); Constantine Dovrolis (Georgia Institute of Technology, USA)</dd>
+</dl>
+<h3><span>Performance analysis and modeling 1</span></h3>
+<dl>
+<dt>Towards a Statistical Network Calculus - Dealing with Uncertainty in Arrivals</dt>
+<dd>Michael Beck (University of Kaiserslautern, Germany); Sebastian Henningsen (University of Kaiserslautern, Germany); Simon Birnbach (University of Kaiserslautern, Germany); Jens Schmitt (University of Kaiserslautern, Germany)</dd>
+<dt>Towards a System Theoretic Approach to Wireless Network Capacity in Finite Time and Space</dt>
+<dd>Florin Ciucu (University of Warwick, United Kingdom); Ramin Khalili (EPFL, Switzerland); Yuming Jiang (Norwegian University of Science and Technology (NTNU), Norway); Liu Yang (Tsinghua University, P.R. China); Yong Cui (Tsinghua University, P.R. China)</dd>
+<dt>Fluctuation Analysis of Debt Based Policies for Wireless Networks with Hard Delay Constraints</dt>
+<dd>Rahul Singh (Texas A&amp;M University, USA); I-Hong Hou (Texas A&amp;M University, USA); Panganamala Kumar (Texas A&amp;M University, USA)</dd>
+<dt>Price of Anarchy in Network Routing with Class based capacity Guarantees</dt>
+<dd>Ehsan Monsef (Illinois Institute of Technology, USA); Tricha Anjali (Illinois Institute of Technology, USA); Sanjiv Kapoor (Illinois Institute of Technology, USA)</dd>
+</dl>
+<h3><span>Performance analysis and modeling 2</span></h3>
+<dl>
+<dt>On the Catalyzing Effect of Randomness on the Per-Flow Throughput in Wireless Networks</dt>
+<dd>Florin Ciucu (University of Warwick, United Kingdom); Jens Schmitt (University of Kaiserslautern, Germany)</dd>
+<dt>Performance Evaluation and Asymptotics for Content Delivery Networks</dt>
+<dd>Virag Shah (The University of Texas at Austin, USA); Gustavo de Veciana (The University of Texas at Austin, USA)</dd>
+<dt>Delay-Throughput Tradeoff with Correlated Mobility of Ad-Hoc Networks</dt>
+<dd>Shuochao Yao (Shanghai Jiaotong University, P.R. China); Xinbing Wang (Shanghai Jiaotong University, P.R. China); Xiaohua Tian (Shanghai Jiaotong University, P.R. China); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Joint Power Optimization of Data Center Network and Servers with Correlation Analysis</dt>
+<dd>Kuangyu Zheng (Ohio State University, USA); Xiaodong Wang (The Ohio State University, USA); Li Li (The Ohio State University, USA); Xiaorui Wang (The Ohio State University, USA)</dd>
+</dl>
+<h3><span>Performance analysis and modeling 3</span></h3>
+<dl>
+<dt>Throughput-Delay Tradeoff in Mobile Ad Hoc Networks with Correlated Mobility</dt>
+<dd>Jiajia Liu (Tohoku University, Japan); Hiroki Nishiyama (Tohoku University, Japan); Nei Kato (Tohoku University, Japan); Jian-feng Ma (Xidian University, Puerto Rico); Xiaohong Jiang (Future University-Hakodate, Japan)</dd>
+<dt>An Approximation Algorithm for Client Assignment in Client/Server Systems</dt>
+<dd>Yuqing Zhu (University of Texas at Dallas, USA); Weili Wu (UT Dallas, USA); James Willson (The University of New Mexico, USA); Ling Ding (University of Washington Tacoma, USA); Lidong Wu (UT Dallas, USA); Deying Li (Renmin University of China, P.R. China); Wonjun Lee (Korea University, Korea)</dd>
+<dt>Sojourn time approximations in a multi-class time-sharing server</dt>
+<dd>Ane Izagirre (University of Toulouse, France); Urtzi Ayesta (CNRS-LAAS and Ikerbasque-University of the Basque Country, Spain); Maaike Verloop (CNRS, France)</dd>
+<dt>A General Framework of Hybrid Graph Sampling for Complex Network Analysis</dt>
+<dd>Xin Xu (North Carolina State University, USA); Chul-Ho Lee (North Carolina State University, USA); Do Young Eun (North Carolina State University, USA)</dd>
+</dl>
+<h3><span>RFID 1</span></h3>
+<dl>
+<dt>Efficient Distributed Query Processing in Large RFID-enabled Supply Chains</dt>
+<dd>Jia Liu (Nanjing University, P.R. China); Bin Xiao (The Hong Kong Polytechnic University, Hong Kong); Kai Bu (Zhejiang University, P.R. China); Li-jun Chen (Nanjing University, P.R. China)</dd>
+<dt>Pandaka: A Lightweight Cipher for RFID Systems</dt>
+<dd>Min Chen (University of Florida, USA); Shigang Chen (University of Florida, USA); Qingjun Xiao (University of Florida, USA)</dd>
+<dt>Efficiently Collecting Histograms Over RFID Tags</dt>
+<dd>Lei Xie (Nanjing University, P.R. China); Hao Han (College of William and Mary, USA); Qun Li (College of William and Mary, USA); Jie Wu (Temple University, USA); Sanglu Lu (Nanjing University, P.R. China)</dd>
+<dt>A Parallel Identification Protocol for RFID Systems</dt>
+<dd>Linghe Kong (Singapore University of Technology and Design, Singapore); Liang He (Singapore University of Technology and Design, Singapore); Yu Gu (Singapore University of Technology and Design, Singapore); Min-You Wu (Shanghai JiaoTong University, P.R. China); Tian He (University of Minnesota, USA)</dd>
+</dl>
+<h3><span>RFID 2</span></h3>
+<dl>
+<dt>Twins: Device-free Object Tracking using Passive Tags</dt>
+<dd>Jinsong Han (Xi&#39;an Jiaotong University, P.R. China); Chen Qian (University of Kentucky, USA); Dan Ma (Xi&#39;an Jiaotong University, P.R. China); Xing Wang (Xi&#39;an Jiaotong University, P.R. China); Jizhong Zhao (Xi&#39;an Jiaotong University, P.R. China); Pengfeng Zhang (Xi&#39;an Jiaotong University, P.R. China); Wei Xi (Xi&#39;an Jiaotong University, P.R. China); Zhiping Jiang (Xian Jiaotong University, P.R. China)</dd>
+<dt>Arbitrarily Accurate Approximation Scheme for Large-Scale RFID Cardinality Estimation</dt>
+<dd>Wei Gong (Tsinghua University, P.R. China); Kebin Liu (Tsinghua University, P.R. China); Xin Miao (Tsinghua University, Hong Kong); Haoxiang Liu (Hong Kong University of Science and Technology, P.R. China)</dd>
+<dt>Towards Adaptive Continuous Scanning in Large-Scale RFID Systems</dt>
+<dd>Haoxiang Liu (Hong Kong University of Science and Technology, P.R. China); Wei Gong (Tsinghua University, P.R. China); Xin Miao (Tsinghua University, P.R. China); Kebin Liu (Tsinghua University, P.R. China); Wenbo He (McGill University, USA)</dd>
+<dt>Read Bulk Data from Computational RFIDs</dt>
+<dd>Yuanqing Zheng (Nanyang Technological University, Singapore); Mo Li (Nanyang Technological University, Singapore)</dd>
+</dl>
+<h3><span>Router and switch design</span></h3>
+<dl>
+<dt>Scalable Forwarding Tables for Supporting Flexible Policies in Enterprise Networks</dt>
+<dd>Shu Yang (Tsinghua University, P.R. China); Mingwei Xu (Tsinghua University, P.R. China); Dan Wang (The Hong Kong Polytechnic University, Hong Kong); Gautier Bayzelon (Tsinghua University, P.R. China); Jianping Wu (Tsinghua University, P.R. China)</dd>
+<dt>Towards Zero-Time Wake-Up of Line Cards in Power-Aware Routers</dt>
+<dd>Tian Pan (Tsinghua University, P.R. China); Ting Zhang (Tsinghua University, P.R. China); Junxiao Shi (University of Arizona, USA); Yang Li (Tsinghua University, P.R. China); Linxiao Jin (Tsinghua University, P.R. China); Fuliang Li (Tsinghua University, P.R. China); Jiahai Yang (Tsinghua University, P.R. China); Beichuan Zhang (University of Arizona, USA); Bin Liu (Tsinghua University, P.R. China)</dd>
+<dt>Multi-Terabyte and Multi-Gbps Information Centric Routers</dt>
+<dd>Giuseppe Rossini (Telecom ParisTech, France); Michele Garetto (Università di Torino, Italy); Dario Rossi (Telecom ParisTech, France); Emilio Leonardi (Politecnico di Torino, Italy)</dd>
+<dt>Safe Routing Reconfigurations with Route Redistribution</dt>
+<dd>Stefano Vissicchio (Université Catholique de Louvain, Belgium); Laurent Vanbever (Princeton University, USA); Luca Cittadini (Roma Tre University, Italy); Geoffrey G Xie (Naval Postgraduate School, USA); Olivier Bonaventure (Université catholique de Louvain, Belgium)</dd>
+</dl>
+<h3><span>Scheduling and buffer management 1</span></h3>
+<dl>
+<dt>Distributed Backup Scheduling: Modeling and Optimization</dt>
+<dd>Peter M van de Ven (IBM Thomas J. Watson Research Center, USA); Bo Zhang (IBM T. J. Watson Research Center, USA); Angela Schorgendorfer (IBM T. J. Watson Research Center, USA)</dd>
+<dt>Fast And Simple Approximation Algorithms for Maximum Weighted Independent Set of Links</dt>
+<dd>Peng-Jun Wan (Illinois Institute of Technology, USA); Xiaohua Jia (City University of Hong Kong, Hong Kong); Guo-Jun Dai (School of Computer Science, Hangzhou DianZi University, P.R. China); Hongwei Du (Harbin Institute of Technology Shenzhen Graduate School, P.R. China); Ophir Frieder (Georgetown University, USA)</dd>
+<dt>A High-order Markov Chain Based Scheduling Algorithm for Low Delay in CSMA Networks</dt>
+<dd>Jaewook Kwak (North Carolina State University, USA); Chul-Ho Lee (North Carolina State University, USA); Do Young Eun (North Carolina State University, USA)</dd>
+<dt>Scheduling of Multicast and Unicast Services under Limited Feedback by using Rateless Codes</dt>
+<dd>Yin Sun (the Ohio State University, USA); Can Emre Koksal (The Ohio State University, USA); Kyu-Han Kim (Hewlett-Packard Laboratories, USA); Ness B. Shroff (The Ohio State University, USA)</dd>
+</dl>
+<h3><span>Scheduling and buffer management 2</span></h3>
+<dl>
+<dt>LP-relaxation based Distributed Algorithms for Scheduling in Wireless Networks</dt>
+<dd>Chandramani K. Singh (University of Illinois at Urbana Champaign, India); Angelia Nedich (University of Illinois at Urbana-Champaign, USA); R. Srikant (University of Illinois at Urbana-Champaign, USA)</dd>
+<dt>Low Complexity Multi-Resource Fair Queueing with Bounded Delay</dt>
+<dd>Wei Wang (University of Toronto, Canada); Ben Liang (University of Toronto, Canada); Baochun Li (University of Toronto, Canada)</dd>
+<dt>Rate-Control and Multi-Channel Scheduling for Wireless Live Streaming with Stringent Deadlines</dt>
+<dd>Shizhen Zhao (Purdue University, USA); Xiaojun Lin (Purdue University, USA)</dd>
+<dt>Sharp Per-Flow Delay Bounds for Bursty Arrivals: The Case of FIFO, SP, and EDF Scheduling</dt>
+<dd>Florin Ciucu (University of Warwick, United Kingdom); Felix Poloczek (TU Berlin / T-Labs, Germany); Jens Schmitt (University of Kaiserslautern, Germany)</dd>
+</dl>
+<h3><span>Scheduling and buffer management 3</span></h3>
+<dl>
+<dt>Scheduling Multicast Traffic with Deadlines in Wireless Networks</dt>
+<dd>Kyu Seob Kim (MIT, USA); Chih-ping Li (MIT, USA); Eytan Modiano (MIT, USA)</dd>
+<dt>Minimizing Makespan and Total Completion Time in MapReduce-like Systems</dt>
+<dd>Yuqing Zhu (University of Texas at Dallas, USA); Yiwei Jiang (Zhejiang Sci-Tech University, USA); Weili Wu (UT Dallas, USA); Ling Ding (University of Washington Tacoma, USA); Ankur Teredesai (Univ of Washington, USA); Deying Li (Renmin University of China, P.R. China); Wonjun Lee (Korea University, Korea)</dd>
+<dt>Scheduling in a Secure Wireless Network</dt>
+<dd>Xuan Wang (University of Victoria, Canada); Yi Chen (University of Victoria, Canada); Lin Cai (University of Victoria, Canada); Jianping Pan (University of Victoria, Canada)</dd>
+<dt>Joint Scheduling of MapReduce Jobs with Servers: Performance Bounds and Experiments</dt>
+<dd>Yuan Yi (The Hong Kong Polytechnic University, Hong Kong); Dan Wang (The Hong Kong Polytechnic University, Hong Kong); Jiangchuan Liu (Simon Fraser University, Canada)</dd>
+</dl>
+<h3><span>Scheduling and buffer management 4</span></h3>
+<dl>
+<dt>Distributed Stochastic Optimization via Correlated Scheduling</dt>
+<dd>Michael J. Neely (University of Southern California, USA)</dd>
+<dt>Multi-Dimensional OFDMA Scheduling in a Wireless Network with Relay Nodes</dt>
+<dd>Reuven Cohen (Technion, Israel); Guy Grebla (Columbia University, USA)</dd>
+<dt>Joint Static and Dynamic Traffic Scheduling in Data Center Networks</dt>
+<dd>Zizhong Cao (Polytechnic Institute of New York University, USA); M. Kodialam (Bell Labs, USA); T. V. Lakshman (Bell Labs, Alcatel-Lucent, USA)</dd>
+<dt>Application-Level Scheduling with Deadline Constraints</dt>
+<dd>Huasen Wu (Beihang University, Beijing, P.R. China); Xiaojun Lin (Purdue University, USA); Xin Liu (UC Davis, USA); Youguang Zhang (Beihang University, P.R. China)</dd>
+</dl>
+<h3><span>Security and privacy 1</span></h3>
+<dl>
+<dt>Learning in Hide-and-Seek</dt>
+<dd>Qingsi Wang (University of Michigan, USA); Mingyan Liu (University of Michigan, USA)</dd>
+<dt>Protecting Your Right: Attribute-based Keyword Search with Fine-grained Owner-enforced Search Authorization in the Cloud</dt>
+<dd>Wenhai Sun (Xidian University, P.R. China); Shucheng Yu (University of Arkansas at Little Rock, USA); Wenjing Lou (Virginia Tech, USA); Thomas Hou (Virginia Tech, USA); Hui Li (Xidian University, P.R. China)</dd>
+<dt>FINE: A Fine-Grained Privacy-Preserving Location-based Service Framework for Mobile Devices</dt>
+<dd>Jun Shao (Zhejiang Gongshang University, P.R. China); Rongxing Lu (Nanyang Technological University, Singapore); Xiaodong Lin (University of Ontario Institute of Technology, Canada)</dd>
+<dt>Will Cyber-Insurance Improve Network Security? A Market Analysis</dt>
+<dd>Ranjan Pal (University of Southern California, USA); Leana Golubchik (USC, USA); Konstantinos Psounis (University of Southern California, USA); Pan Hui (Hong Kong University of Science and Technology, Hong Kong)</dd>
+</dl>
+<h3><span>Security and privacy 2</span></h3>
+<dl>
+<dt>VABKS: Verifiable Attribute-based Keyword Search over Outsourced Encrypted Data</dt>
+<dd>Qingji Zheng (University of Texas at San Antonio, USA); Shouhuai Xu (University of Texas at San Antonio, USA); Giuseppe Ateniese (The Johns Hopkins University, USA)</dd>
+<dt>Deep Packet Inspection with DFA-trees and Parametrized Language Overapproximation</dt>
+<dd>Daniel Luchaup (University of Wisconsin Madison, USA); Lorenzo De Carli (University of Wisconsin-Madison, USA); Somesh Jha (University of Wisconsin, USA); Eric Bach (University of Wisconsin Madison, USA)</dd>
+<dt>Optimal Privacy-Preserving Energy Management for Smart Meters</dt>
+<dd>Lei Yang (Arizona State University, USA); Xu Chen (Arizona State University, USA); Junshan Zhang (Arizona State University, USA); H. Vincent Poor (Princeton University, USA)</dd>
+<dt>Achieving Differential Privacy of Data Disclosure in the Smart Grid</dt>
+<dd>Jing Zhao (Illinois Institute of Technology, USA); Taeho Jung (Illinois Institute of Technology, USA); Yu Wang (University of North Carolina at Charlotte, USA); Xiang-Yang Li (Illinois Institute of Technology, USA)</dd>
+</dl>
+<h3><span>Security and privacy 3</span></h3>
+<dl>
+<dt>PLAM: A Privacy-Preserving Framework for Local-Area Mobile Social Networks</dt>
+<dd>Rongxing Lu (Nanyang Technological University, Singapore); Xiaodong Lin (University of Ontario Institute of Technology, Canada); Zhiguo Shi (Zhejiang University, P.R. China); Jun Shao (Zhejiang Gongshang University, P.R. China)</dd>
+<dt>Achieving k-anonymity in Privacy-Aware Location-Based Services</dt>
+<dd>Ben Niu (Xidian University, P.R. China); Qinghua Li (University of Arkansas, USA); Xiaoyan Zhu (Xidian University, P.R. China); Guohong Cao (The Pennsylvania State University, USA); Hui Li (Xidian University, P.R. China)</dd>
+<dt>Preserving secondary users&#39; privacy in cognitive radio networks</dt>
+<dd>Zhengrui Qin (College of William and Mary, USA); Qun Li (College of William and Mary, USA); Shanhe Yi (College of William and Mary, USA); Dmitry Zamkov (University of Illinois at Urbana-Champaign, USA)</dd>
+<dt>Markov Chain Fingerprinting to Classify Encrypted Traffic</dt>
+<dd>Maciej Korczyński (EENR &amp; DIMACS, Rutgers University, USA); Andrzej Duda (Grenoble Institute of Technology, France)</dd>
+</dl>
+<h3><span>Sensor networks 1</span></h3>
+<dl>
+<dt>A Generalized Coverage-Preserving Scheduling in WSNs: a Case Study in Structural Health Monitoring</dt>
+<dd>Xuefeng Liu (The Hong Kong Polytechnic University, Hong Kong); Jiannong Cao (Hong Kong Polytechnic Univ, Hong Kong); Shaojie Tang (Temple University, USA); Peng Guo (Huazhong University of Science and Technology, P.R. China)</dd>
+<dt>SenSpeed: Sensing Driving Conditions to Estimate Vehicle Speed in Urban Environments</dt>
+<dd>Haofu Han (Shanghai Jiaotong University, P.R. China); Jiadi Yu (Shanghai Jiao Tong University, P.R. China); Hongzi Zhu (Shanghai Jiao Tong University, P.R. China); Yingying Chen (Stevens Institute of Technology, USA); Jie Yang (Oakland University, USA); Yanmin Zhu (Shanghai Jiao Tong University, P.R. China); Xue Guangtao (Shanghai Jiao Tong University, P.R. China); Minglu Li (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>An Optimal Data Collection Technique for Improved Utility in UAS-aided Networks</dt>
+<dd>Ahmed E.A.A. Abdulla (Tohoku University, Japan); Zubair Fadlullah (Tohoku University, Japan); Hiroki Nishiyama (Tohoku University, Japan); Nei Kato (Tohoku University, Japan); Fumie Ono (National Institute of Information and Communications Technology, Japan); Ryu Miura (NICT, Japan)</dd>
+<dt>Toward Optimal Allocation of Location Dependent Tasks in Crowdsensing</dt>
+<dd>Shibo He (Arizona State University, USA); Dong-Hoon Shin (Arizona State University, USA); Junshan Zhang (Arizona State University, USA); Jiming Chen (Zhejiang University, P.R. China)</dd>
+</dl>
+<h3><span>Sensor networks 2</span></h3>
+<dl>
+<dt>Maximizing the Value of Sensed Information in Underwater Wireless Sensor Networks via an Autonomous Underwater Vehicle</dt>
+<dd>Stefano Basagni (Northeastern University, USA); Ladislau Bölöni (University of Central Florida, USA); Petrika Gjanci (Universita degli Studi di Roma &quot;La Sapienza&quot;, Italy); Chiara Petrioli (University of Rome &quot;La Sapienza&quot;, Italy); Cynthia A Phillips (Sandia National Laboratories, USA); Damla Turgut (University of Central Florida, USA)</dd>
+<dt>Walking down the STAIRS: Efficient Collision Resolution for Wireless Sensor Networks</dt>
+<dd>Xiaoyu Ji (Hong Kong University of Science and Technology, P.R. China); Yuan He (Tsinghua University, P.R. China); Jiliang Wang (Tsinghua University, P.R. China); Wei Dong (Zhejiang University, P.R. China); Xiaopei Wu (Tsinghua University, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+<dt>Critical Sensing Range for Mobile Heterogeneous Camera Sensor Networks</dt>
+<dd>Yitao Hu (Shanghai Jiao Tong University, P.R. China); Xinbing Wang (Shanghai Jiaotong University, P.R. China); Xiaoying Gan (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>Bounded Stretch Geographic Homotopic Routing in Sensor Networks</dt>
+<dd>Kan Huang (State University of New York at Stony Brook, USA); Chien-Chun Ni (Stony Brook University, USA); Rik Sarkar (The University of Edinburgh, United Kingdom); Jie Gao (Stony Brook University, USA); Joseph Mitchell (SUNY Stony Brook, USA)</dd>
+</dl>
+<h3><span>Sensor networks 3</span></h3>
+<dl>
+<dt>How to identify global trends from local decisions? Spatial Event Detection on Mobile Networks</dt>
+<dd>Andreas Loukas (Delft University of Technology, The Netherlands); Marco Zuniga (Delft University of Technology, The Netherlands); Ioannis Protonotarios (Delft University of Technology, The Netherlands); Jie Gao (Stony Brook University, USA)</dd>
+<dt>Sleep in the Dins: Insomnia Therapy for Duty-cycled Sensor Networks</dt>
+<dd>Jiliang Wang (Tsinghua University, P.R. China); Zhichao Cao (Tsinghua University, P.R. China); Xufei Mao (Tsinghua University, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+<dt>Mobile-to-Mobile Energy Replenishment in Mission-Critical Robotic Sensor Networks</dt>
+<dd>Liang He (Singapore University of Technology and Design, Singapore); Peng Cheng (Zhejiang University, P.R. China); Yu Gu (Singapore University of Technology and Design, Singapore); Jianping Pan (University of Victoria, Canada); Ting Zhu (State University of New York at Binghamton, USA); Cong Liu (The University of texas at Dallas, USA)</dd>
+<dt>Connected Wireless Camera Network Deployment with Visibility Coverage</dt>
+<dd>Hua Huang (Temple University, USA); Chien-Chun Ni (Stony Brook University, USA); Jie Gao (Stony Brook University, USA); Xiaomeng Ban (Stony Brook University, USA); Andrew Schneider (Temple University, USA); Shan Lin (Temple University, USA)</dd>
+</dl>
+<h3><span>Sensor networks 4</span></h3>
+<dl>
+<dt>Optimal Link Scheduling for Delay-constrained Periodic Traffic over Unreliable Wireless Links</dt>
+<dd>Yan Li (University of Otago, New Zealand); Haibo Zhang (Universtiy of Otago, New Zealand); Zhiyi Huang (University of Otago, New Zealand); Michael Albert (University of Otago, New Zealand)</dd>
+<dt>Approximate Multiple Count in Wireless Sensor Networks</dt>
+<dd>Xiaolin Fang (Harbin Institute of Technology, P.R. China); Hong Gao (University of Harbin Institute Technology, P.R. China); Jianzhong Li (Harbin Institute of Technology, P.R. China); Yingshu Li (Georgia State University, USA)</dd>
+<dt>Coverage in Visual Sensor Networks with Pan-Tilt-Zoom Cameras: the MaxFoV Problem</dt>
+<dd>Vikram P. Munishwar (State University of New York at Binghamton, USA); Vinay Kolar (IBM Research, India); Nael Abu-Ghazaleh (State University of New York at Binghamton, USA)</dd>
+<dt>EV-Sounding: A Visual Assisted Electronic Channel Sounding System</dt>
+<dd>Gang Li (the Ohio State University, USA); Jin Teng (The Ohio State University, USA); Fan Yang (the Ohio State University, USA); Adam C. Champion (The Ohio State University, USA); Dong Xuan (The Ohio State University, USA); Hong Luan (University of Jinan, P.R. China); Yuan Fang Zheng (The Ohio-state University, USA)</dd>
+</dl>
+<h3><span>Short range wireless technologies 1</span></h3>
+<dl>
+<dt>SBVLC: Secure Barcode-based Visible Light Communication for Smartphones</dt>
+<dd>Bingsheng Zhang (State University of New York at Buffalo, USA); Kui Ren (State University of New York at Buffalo, USA); Guoliang Xing (Michigan State University, USA); Xinwen Fu (University of Massachusetts Lowell, USA); Cong Wang (City University of Hong Kong, Hong Kong)</dd>
+<dt>Sonar Inside Your Body: Prototyping Ultrasonic Intra-body Sensor Networks</dt>
+<dd>G. Enrico Santagati (State University of New York at Buffalo, USA); Tommaso Melodia (State University of New York at Buffalo, USA)</dd>
+<dt>LiFi: Line-Of-Sight Identification with WiFi</dt>
+<dd>Zimu Zhou (Hong Kong University of Science and Technology, Hong Kong); Zheng Yang (Tsinghua University, P.R. China); Chenshu Wu (Tsinghua University, P.R. China); Wei Sun (Hong Kong University of Science and Technology, Hong Kong); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+<dt>Frogeye: Perception of the Slightest Tag Motion</dt>
+<dd>Lei Yang (Xi&#39;an Jiaotong University, P.R. China); Jianbing Fang (Tsinghua University, P.R. China); Xuan Ding (Tsinghua University, P.R. China); Tianci Liu (Tsinghua University, P.R. China); Mo Li (Nanyang Technological University, Singapore); Yong Qi (Tshinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Short range wireless technologies 2</span></h3>
+<dl>
+<dt>Enhancing Zigbee throughput under WiFi interference using real-time adaptive coding</dt>
+<dd>Peng Guo (Huazhong University of Science and Technology, P.R. China); Jiannong Cao (Hong Kong Polytechnic Univ, Hong Kong); Kui Zhang (University of Twente, The Netherlands); Xuefeng Liu (The Hong Kong Polytechnic University, Hong Kong)</dd>
+<dt>BlueID: A Practical System for Bluetooth Device Identification</dt>
+<dd>Jun Huang (Michigan State University, USA); Wahhab Mousa (Michigan State University, USA); Guoliang Xing (Michigan State University, USA)</dd>
+<dt>RollCaller: User-Friendly Indoor Navigation System Using Human-Item Spatial Relation</dt>
+<dd>Yi Guo (Hongkong University of Science and Technology, P.R. China); Lei Yang (Xi&#39;an Jiaotong University, P.R. China); Bowen Li (School of Software, Tsinghua University, P.R. China); Tianci Liu (Tsinghua University, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Smart Grid 1</span></h3>
+<dl>
+<dt>Structure-aware Stochastic Load Management in Smart Grids</dt>
+<dd>Yu Zhang (University of California, Los Angeles, USA); Mihaela van der Schaar (University of California, Los Angeles (UCLA), USA)</dd>
+<dt>Power Grid Vulnerability to Geographically Correlated Failures - Analysis and Control Implications</dt>
+<dd>Andrey Bernstein (Technion - Israel Institute of Technology, Israel); Daniel Bienstock (Columbia University, USA); David Hay (The Hebrew University of Jerusalem, Israel); Meric Uzunoglu (Columbia University, USA); Gil Zussman (Columbia University, USA)</dd>
+<dt>Greenbench: A Benchmark for Observing Power Grid Vulnerability Under Data-Centric Threats</dt>
+<dd>Mingkui Wei (North Carolina State University, USA); Wenye Wang (NC State University, USA)</dd>
+<dt>Stochastic Information Management for Voltage Regulation in Smart Distribution Systems</dt>
+<dd>Hao Liang (University of Waterloo, Canada); Atef Abdrabou (UAE University, UAE); Weihua Zhuang (University of Waterloo, Canada)</dd>
+</dl>
+<h3><span>Smart Grid 2</span></h3>
+<dl>
+<dt>Optimal Combined Heat and Power System Scheduling in Smart Grid</dt>
+<dd>Kan Zhou (University of Victoria, Canada); Jianping Pan (University of Victoria, Canada); Lin Cai (University of Victoria, Canada)</dd>
+<dt>Proactive Fault-Tolerant Aggregation Protocol for Privacy-Assured Smart Metering</dt>
+<dd>Jongho Won (Purdue University, USA); Chris Yu Tak Ma (Advanced Digital Sciences Center, Illinois at Singapore, Singapore); David K. Y. Yau (Purdue University, USA); Nageswara Rao (Oak Ridge National Laboratory, USA)</dd>
+<dt>Blowing Hard Is Not All We Want: Quantity vs Quality of Wind Power in the Smart Grid</dt>
+<dd>Fanxin Kong (McGill University, Canada); Chuansheng Dong (McGill University, Canada); Xue Liu (McGill Univerisity, Canada); Haibo Zeng (McGill University, Canada)</dd>
+<dt>Robust and Cost-Effective Architecture Design for Smart Grid Communications: A Multi-stage Middleware Deployment Approach</dt>
+<dd>Dong-Hoon Shin (Arizona State University, USA); Shibo He (Arizona State University, USA); Junshan Zhang (Arizona State University, USA)</dd>
+</dl>
+<h3><span>Social computing and networks 1</span></h3>
+<dl>
+<dt>On Designing Neighbor Discovery Protocols: A Code-Based Approach</dt>
+<dd>Tong Meng (Shanghai Jiao Tong University, P.R. China); Fan Wu (Shanghai Jiao Tong University, P.R. China); Guihai Chen (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>Assessment of Multi-Hop Interpersonal Trust in Social Networks by Three-Valued Subjective Logic</dt>
+<dd>Guangchi Liu (Montana State University, USA); Qing Yang (Montana State University, USA); Honggang Wang (University of Massachusetts, Dartmouth, USA); Xiaodong Lin (University of Ontario Institute of Technology, Canada); Mike P Wittie (Montana State University, USA)</dd>
+<dt>FluidRating: A Time-Evolving Rating Scheme in Trust-based Recommendation Systems Using Fluid Dynamics</dt>
+<dd>Wenjun Jiang (Central South University, P.R. China); Jie Wu (Temple University, USA); Guojun Wang (Central South University, P.R. China); Huanyang Zheng (Temple University, USA)</dd>
+<dt>LBSNSim: Analyzing and Modeling Location-based Social Networks</dt>
+<dd>Wei Wei (College of William and Mary, USA); Xiaojun Zhu (Nanjing University, P.R. China); Qun Li (College of William and Mary, USA)</dd>
+</dl>
+<h3><span>Social computing and networks 2</span></h3>
+<dl>
+<dt>Information Diffusion in Mobile Social Networks: The Speed Perspective</dt>
+<dd>Zongqing Lu (The Pennsylvania State University, USA); Yonggang Wen (Nanyang Technological University, Singapore); Guohong Cao (The Pennsylvania State University, USA)</dd>
+<dt>Improving Data Forwarding in Mobile Social Networks with Infrastructure Support: A Space-Crossing Community Approach</dt>
+<dd>Zhong Li (Tongji University, P.R. China); Cheng Wang (University of Ottawa, Canada); Siqian Yang (University of Tongji, P.R. China); Changjun Jiang (Tongji University, P.R. China); Ivan Stojmenovic (University of Ottawa, Canada)</dd>
+<dt>Optimizing Offline Access to Social Network Content on Mobile Devices</dt>
+<dd>Ngoc Do (UC Irvine, USA); Ye Zhao (University of California, Irvine, USA); Shu-Ting Wang (National Tsing Hua University, Taiwan); Cheng-Hsin Hsu (National Tsing Hua University, Taiwan); Nalini Venkatasubramanian (University of California, Irvine, USA)</dd>
+<dt>A Social Group Utility Maximization Framework with Applications in Database Assisted Spectrum Access</dt>
+<dd>Xu Chen (Arizona State University, USA); Xiaowen Gong (Arizona State University, USA); Lei Yang (Arizona State University, USA); Junshan Zhang (Arizona State University, USA)</dd>
+</dl>
+<h3><span>Social computing and networks 3</span></h3>
+<dl>
+<dt>A Robust Information Source Estimator with Sparse Observations</dt>
+<dd>Kai Zhu (Arizona State University, USA); Lei Ying (Arizona State University, USA)</dd>
+<dt>Modeling Social Network Relationships via t-Cherry Junction Trees</dt>
+<dd>Brian Proulx (Arizona State University, USA); Junshan Zhang (Arizona State University, USA)</dd>
+<dt>Epidemic Thresholds with External Agents</dt>
+<dd>Siddhartha Banerjee (The University of Texas at Austin, USA); Avhishek Chatterjee (UT Austin, USA); Sanjay Shakkottai (The University of Texas at Austin, USA)</dd>
+<dt>Personal Clouds: Sharing and Integrating Networked Resources to Enhance End User Experiences</dt>
+<dd>Minsung Jang (Georgia Institute of Technology, USA); Karsten Schwan (Georgia Tech, USA); Ketan Bhardwaj (Georgia Institute of Technology, USA); Ada Gavrilovska (Georgia Institute of Technology, USA); Adhyas Avasthi (Nokia Research Center, Palo Alto, USA)</dd>
+</dl>
+<h3><span>Software defined networking</span></h3>
+<dl>
+<dt>Software Defined Green Data Center Network with Exclusive Routing</dt>
+<dd>Dan Li (Tsinghua University, P.R. China); Yunfei Shang (Tsinghua University, P.R. China); Congjie Chen (Tsinghua University, P.R. China)</dd>
+<dt>On Diagnosis of Forwarding Plane via Static Forwarding Rules in Software Defined Networks</dt>
+<dd>Ulas Can Kozat (DOCOMO Innovations, USA); Guanfeng Liang (DOCOMO Innovations, USA); Koray Kokten (Ozyegin University, Turkey)</dd>
+<dt>Software Defined Monitoring of Application Protocols</dt>
+<dd>Lukáš Kekely (CESNET a. l. e., Czech Republic); Viktor Puš (CESNET, Czech Republic); Jan Korenek (Brno University of Technology, Czech Republic)</dd>
+<dt>On the effect of forwarding table size on SDN network utilization</dt>
+<dd>Rami Cohen (IBM Research - Haifa, Israel); Liane Lewin-Eytan (Yahoo! Research, Israel); Joseph (Seffi) Naor (Technion, Israel); Danny Raz (Technion, Israel)</dd>
+</dl>
+<h3><span>Urban sensing and environmental monitoring</span></h3>
+<dl>
+<dt>How to Crowdsource Tasks Truthfully without Sacrificing Utility: Online Incentive Mechanisms with Budget Constraint</dt>
+<dd>Dong Zhao (Beijing University of Posts and Telecommunications, P.R. China); Xiang-Yang Li (Illinois Institute of Technology, USA); Huadong Ma (Beijing University of Posts and Telecommunications, P.R. China)</dd>
+<dt>TRAC: Truthful Auction for Location-Aware Collaborative Sensing in Mobile Crowdsourcing</dt>
+<dd>Zhenni Feng (Shanghai Jiao Tong University, P.R. China); Yanmin Zhu (Shanghai Jiao Tong University, P.R. China); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong); Lionel Ni (Hong Kong University of Science and Technology, Hong Kong); Athanasios V. Vasilakos (National Technical University of Athens, Greece)</dd>
+<dt>ShopProfiler: Profiling Shops with Crowdsourcing Data</dt>
+<dd>Xiaonan Guo (Singapore Management University, Singapore); Eddie Chan (The Hong Kong University of Science and Technology, Hong Kong); Ce Liu (University of Pittsburgh, USA); Kaishun Wu (HKUST, Hong Kong); Siyuan Liu (Carnegie Mellon University, USA); Lionel Ni (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Compressive Sensing over Strongly Connected Digraph and Its Transportation Monitoring Application</dt>
+<dd>Xiao Qi (Tsinghua University, P.R. China); Yongcai Wang (Tsinghua University, P.R. China); Yuexuan Wang (The University of Hong Kong, P.R. China); Liwen Xu (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Vehicular networks 1</span></h3>
+<dl>
+<dt>Towards Automatic Phone-to-Phone Communication for Vehicular Networking Applications</dt>
+<dd>Shaohan Hu (University of Illinois at Urbana-Champaign, USA); Hengchang Liu (UIUC, USA); Lu Su (University of Illinois at Urbana-Champaign, USA); Hongyan Wang (UIUC, USA); Tarek Abdelzaher (University of Illinois, Urbana Champaign, USA); Pan Hui (Hong Kong University of Science and Technology, Hong Kong); Wei Zheng (University of Wisconsin - Madison, USA); Zhiheng Xie (University of Virginia, USA); John Stankovic (University of Virginia, USA)</dd>
+<dt>POST: Exploiting Dynamic Sociality for Mobile Advertising in Vehicular Networks</dt>
+<dd>Jun Qin (Shanghai Jiao Tong University, P.R. China); Hongzi Zhu (Shanghai Jiao Tong University, P.R. China); Yanmin Zhu (Shanghai Jiao Tong University, P.R. China); Li Lu (University of Electronic Science and Technology of China, P.R. China); Xue Guangtao (Shanghai Jiao Tong University, P.R. China); Minglu Li (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>On Multihop Communications For In-Vehicle Internet Access Based On a TDMA MAC Protocol</dt>
+<dd>Hassan A Omar (University of Waterloo, Canada); Weihua Zhuang (University of Waterloo, Canada); Li Li (Communication Research Centre of Canada, Canada)</dd>
+<dt>GeoMob: A Mobility-aware Geocast Scheme in Metropolitans via Taxicabs and Buses</dt>
+<dd>Lei Zhang (University of Victoria, Canada); Boyang Yu (University of Victoria, Canada); Jianping Pan (University of Victoria, Canada)</dd>
+</dl>
+<h3><span>Vehicular networks 2</span></h3>
+<dl>
+<dt>A Cooperative Advanced Driver Assistance System to Mitigate Vehicular Traffic Shock Waves</dt>
+<dd>Markus Forster (University of Luxembourg, Luxemburg); Raphael Frank (University of Luxembourg, Luxemburg); Mario Gerla (University of California at Los Angeles, USA); Thomas Engel (University of Luxemburg, Luxemburg)</dd>
+<dt>Data-driven Traffic Flow Analysis for Vehicular Communications</dt>
+<dd>Yang Wang (University of Science and Technology of China, P.R. China); Liusheng Huang (University of Science and Technology of China, P.R. China); Tianbo Gu (University of Massachusetts Amherst, USA); Hao Wei (The Chinese University of Hong Kong, Hong Kong); Kai Xing (University of Science and Technology of China, P.R. China); Junshan Zhang (Arizona State University, USA)</dd>
+<dt>CityDrive: A Map-Generating and Speed-Optimizing Driving System</dt>
+<dd>Yiran Zhao (Shanghai Jiao Tong University, P.R. China); Yang Zhang (Shanghai Jiao Tong University, P.R. China); Tuo Yu (Shanghai Jiaotong University, P.R. China); Tianyuan Liu (Shanghai Jiao Tong University, P.R. China); Xinbing Wang (Shanghai Jiaotong University, P.R. China); Xiaohua Tian (Shanghai Jiaotong University, P.R. China); Xue Liu (McGill Univerisity, Canada)</dd>
+<dt>ForeSight: Mapping Vehicles in Visual Domain and Electronic Domain</dt>
+<dd>Dong Li (Ohio State University, USA); Zhixue Lu (Ohio State University, USA); Tarun Bansal (The Ohio State University, USA); Erik Schilling (Ohio State University, USA); Prasun Sinha (Ohio State University, USA)</dd>
+</dl>
+<h3><span>Wireless LANs</span></h3>
+<dl>
+<dt>Loss Differentiation: Moving onto High-Speed Wireless LANs</dt>
+<dd>Muhammad Ruwaifa Anwar (Lahore University of Management Sciences, Pakistan); Muhammad Kamran Nishat (Lahore University of Management Sciences, Pakistan); Mohsin Ali (Lahore University of Management Sciences, Pakistan); Zahaib Akhtar (University of Southern California, USA); Haseeb Niaz (Stony Brook University, USA); Ihsan Ayyub Qazi (Lahore University of Management Sciences, Pakistan)</dd>
+<dt>MISC: Merging Incorrect Symbols using Constellation Diversity for 802.11 Retransmission</dt>
+<dd>Jiajue Ou (Nanyang Technological University, Singapore); Yuanqing Zheng (Nanyang Technological University, Singapore); Mo Li (Nanyang Technological University, Singapore)</dd>
+<dt>TRACK: Unleash Exposed Terminals in Enterprise WLANs</dt>
+<dd>Jun Huang (Michigan State University, USA); Guoliang Xing (Michigan State University, USA); Gang Zhou (College of William and Mary, USA)</dd>
+<dt>SimCast: Efficient Video Delivery in MU-MIMO WLANs</dt>
+<dd>Guanhua Wang (Hong Kong University of Science and Technology, Hong Kong); Kaishun Wu (HKUST, Hong Kong); Qian Zhang (Hong Kong University of Science and Technology, Hong Kong); Lionel Ni (Hong Kong University of Science and Technology, Hong Kong)</dd>
+</dl>
+<h3><span>Wireless networks 1</span></h3>
+<dl>
+<dt>Fundamental Limit on the Capacity of Full-Duplex Wireless Networks</dt>
+<dd>Xiufeng Xie (University of Wisconsin-Madison, USA); Xinyu Zhang (University of Wisconsin-Madison, USA)</dd>
+<dt>Characterizing the Achievable Throughput in Wireless Networks with Two Active RF chains</dt>
+<dd>Yang Yang (Ohio State University, USA); Bo Chen (Ohio State University, USA); Kannan Srinivasan (The Ohio State University, USA); Ness B. Shroff (The Ohio State University, USA)</dd>
+<dt>WiFall: Device-free Fall Detection by Wireless Networks</dt>
+<dd>Chunmei Han (Hong Kong University of Science and Technology, Hong Kong); Kaishun Wu (HKUST, Hong Kong); Yuxi Wang (The Hong Kong University of Science and Technology, Hong Kong); Lionel Ni (Hong Kong University of Science and Technology, Hong Kong)</dd>
+<dt>Distributed Learning for Utility Maximization over CSMA-based Wireless Multihop Networks</dt>
+<dd>Hyeryung Jang (KAIST, Korea); Se-Young Yun (KTH, Sweden); Jinwoo Shin (KAIST, Korea); Yung Yi (KAIST, Korea)</dd>
+</dl>
+<h3><span>Wireless networks 2</span></h3>
+<dl>
+<dt>Cooperative Anti-jamming for Infrastructure-less Wireless Networks with Stochastic Relaying</dt>
+<dd>Liyang Zhang (State University of New York at Buffalo, USA); Zhangyu Guan (State University of New York at Buffalo, USA); Tommaso Melodia (State University of New York at Buffalo, USA)</dd>
+<dt>Optimal Delay Bound for Maximum Weight Scheduling Policy in Wireless Networks</dt>
+<dd>Cem Boyaci (University of Florida, USA); Ye Xia (University of Florida, USA)</dd>
+<dt>Restricted Coverage in Wireless Networks</dt>
+<dd>Xiaohua Xu (University of Toledo, USA); Min Song (The University of Toledo, USA)</dd>
+<dt>Hello: A Generic Flexible Protocol for Neighbor Discovery</dt>
+<dd>Wei Sun (Hong Kong University of Science and Technology, Hong Kong); Zheng Yang (Tsinghua University, P.R. China); Keyu Wang (Hong Kong University of Science and Technology, Hong Kong); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+</dl>
+<h3><span>Wireless networks 3</span></h3>
+<dl>
+<dt>Scalable User Selection for MU-MIMO Networks</dt>
+<dd>Xiufeng Xie (University of Wisconsin-Madison, USA); Xinyu Zhang (University of Wisconsin-Madison, USA)</dd>
+<dt>iBeam: Intelligent Client-Side Multi-User Beamforming in Wireless Networks</dt>
+<dd>Yongjiu Du (Southern Methodist University, USA); Ehsan Aryafar (Intel Labs, USA); Joseph D. Camp (Southern Methodist University, USA); Mung Chiang (Princeton University, USA)</dd>
+<dt>Montage: Combine Frames with Movement Continuity for Realtime Multi-User Tracking</dt>
+<dd>Lan Zhang (Tsinghua University, P.R. China); Kebin Liu (Tsinghua University, P.R. China); Yonghang Jiang (Tsinghua University, P.R. China); Xiang-Yang Li (Illinois Institute of Technology, USA); Yunhao Liu (Tsinghua University, P.R. China); Panlong Yang (Institute of Communication Engineering, PLAUST, P.R. China)</dd>
+<dt>3D Pipeline Contention: Asymmetric Full Duplex in Wireless Networks</dt>
+<dd>Shaohe Lv (National University of Defense Technology, P.R. China); Xuan Dong (National University of Defence Technology, P.R. China); Yong Lu (National University of Defense Technology, P.R. China); Xiaoli Du (National University of Defense Technology, P.R. China); Xiaodong Wang (National University of Defense Technology, P.R. China); Yong Dou (National University of Defense Technology (NUDT), P.R. China); XingMing Zhou (School of Computer, National University of Defense Technology, P.R. China)</dd>
+</dl>
+<h3><span>Wireless security and privacy 1</span></h3>
+<dl>
+<dt>SYNERGY: A Game-Theoretical Approach for Cooperative Key Generation in Wireless Networks</dt>
+<dd>Jingchao Sun (Arizona State University, USA); Xu Chen (Arizona State University, USA); Jinxue Zhang (Arizona State University, USA); Yanchao Zhang (Arizona State University, USA); Junshan Zhang (Arizona State University, USA)</dd>
+<dt>Utility-based Cooperative Decision in Cooperative Authentication</dt>
+<dd>Yunchuan Guo (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Yin Lihua (Institute of Computing Technology, Chinese Academy of Sciences, P.R. China); Licai Liu (Institute of Information Engineering, Chinese Academy of Sciences, P.R. China); Fang Binxing (Institute of Computing Technology Chinese Academy of Sciences, P.R. China)</dd>
+<dt>Security Vulnerability and Countermeasures of Frequency Offset Correction in 802.11a Systems</dt>
+<dd>Hanif Rahbari (University of Arizona, USA); Marwan Krunz (University of Arizona, USA); Loukas Lazos (University of Arizona, USA)</dd>
+<dt>A New Efficient Physical Layer OFDM Encryption Scheme</dt>
+<dd>Fei Huo (University of Waterloo, Canada); Guang Gong (University of Waterloo, Canada)</dd>
+</dl>
+<h3><span>Wireless security and privacy 2</span></h3>
+<dl>
+<dt>Physical Layer Challenge-Response Authentication in Wireless Networks with Relay</dt>
+<dd>Xianru Du (University of Michigan - Dearborn, USA); Dan Shan (GM Research, USA); Kai Zeng (University of Michigan - Dearborn, USA); Lauren Huie (Air Force Research Lab, USA)</dd>
+<dt>PS-TRUST: Provably Secure Solution for Truthful Double Spectrum Auctions</dt>
+<dd>Zhili Chen (University of Science and Technology of China, P.R. China); Liusheng Huang (University of Science and Technology of China, P.R. China); Lu Li (University of Science and Technology of China, P.R. China); Wei Yang (University of Science and Technology of China, P.R. China); Haibo Miao (University of Science and Technology of China, P.R. China); Miaomiao Tian (University of Science and Technology of China, P.R. China); Fei Wang (Suzhou Institute for Advanced Study, USTC, P.R. China)</dd>
+<dt>Information Leaks Out: Attacks and Countermeasures on Compressive Data Gathering in Wireless Sensor Networks</dt>
+<dd>Pengfei Hu (University of California, Davis, USA); Kai Xing (University of Science and Technology of China, P.R. China); Xiuzhen Cheng (George Washington Univ, USA); Hao Wei (The Chinese University of Hong Kong, Hong Kong); Haojin Zhu (Shanghai Jiao Tong University, P.R. China)</dd>
+<dt>Secure Cooperative Spectrum Sensing and Access Against Intelligent Malicious Behaviors</dt>
+<dd>Wei Wang (Zhejiang University, P.R. China); Lin Chen (The University of Paris-Sud, France); Kang G. Shin (University of Michigan, USA); Lingjie Duan (Singapore University of Technology and Design (SUTD), Singapore)</dd>
+</dl>
+<h3><span>Wireless security and privacy 3</span></h3>
+<dl>
+<dt>Scaling Laws for Secrecy Capacity in Cooperative Wireless Networks</dt>
+<dd>Mahtab Mirmohseni (KTH Royal Institute of Technology, Sweden); Panagiotis (Panos) Papadimitratos (KTH, Sweden)</dd>
+<dt>How Can Botnets Cause Storms? Understanding the Evolution and Impact of Mobile Botnets</dt>
+<dd>Zhuo Lu (Intelligent Automation, Inc, USA); Wenye Wang (NC State University, USA); Cliff Wang (Army Research Office, USA)</dd>
+<dt>Analysis and Detection of SIMbox Fraud in Mobility Networks</dt>
+<dd>Ilona Murynets (AT&amp;T Security Research Center, USA); Michael Zabarankin (Stevens Institute of Technology, USA); Roger Piqueras Jover (AT&amp;T Security Research Center, USA); Adam Panagia (AT&amp;T, USA)</dd>
+<dt>COLLECTOR: A Secure RFID-Enabled Batch Recall Protocol</dt>
+<dd>Saiyu Qi (Hong Kong university of science and Technology, Hong Kong); Yuanqing Zheng (Nanyang Technological University, Singapore); Mo Li (Nanyang Technological University, Singapore); Li Lu (University of Electronic Science and Technology of China, P.R. China); Yunhao Liu (Tsinghua University, P.R. China)</dd>
+</dl>
+
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-879036-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body></html>
+
